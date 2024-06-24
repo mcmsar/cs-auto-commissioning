@@ -10,9 +10,7 @@ The Venus application, developed by Techno-Sciences, inc., is an end-to-end test
 ## Structure
 In order to provide the tests in a manner that is easier to keep in harmony, the following structure is suggested.
 
-A parent directory should be maintained for each category of tests, e.g., MCC LGM Commissioning, MCC FGB ELT(DT) Delta Commissioning, MCC SGB Delta Commissioning. Within each general category, a subdirectory should be maintained for tests for nodal MCCs, non-nodal MCCs, and non-nodal CDDR MCCs.
-
-Example:
+A parent directory should be maintained for each category of tests, e.g., MCC LGM Commissioning, MCC FGB ELT(DT) Delta Commissioning, MCC SGB Delta Commissioning. Within each general category, a subdirectory should be maintained for tests for nodal MCCs, non-nodal MCCs, and non-nodal CDDR MCCs. Example:
 
 + MCC LGM Commissioning
   + Nodal MCCs
@@ -44,3 +42,30 @@ Example:
   + Non-Nodal CDDR MCCs
     + Test Table
     + Venus Tests
+
+A Venus test suite consists of a general config.xml file, a series of XML files in the format <test number>.xml that define the individual tests, and an "in", "out", and "expected" directory with each containing individual subdirectories for each test. Example:
+
++ Venus Tests
+  + config.xml
+  + 1.xml
+  + 2.xml
+  + ...
+  + in
+    + 1
+    + 2
+    + ...
+  + out
+    + 1
+    + 2
+    + ...
+  + expected
+    + 1
+    + 2
+    + ...
+   
+## Writing Venus test scripts
+When creating a new Venus test, first select a new test number (they do not need to be consecutive), then create a corresponding XML file, in, out, and expected directory. **Because GitHub does not support empty directories, store a blank ".gitkeep" file in the out and expected directories.** For example, for test 1, there will be 1.xml, in/1, out/1, out/1/.gitkeep, expected/1, and expected/1/.gitkeep. It is recommended to use a previous XML test for a template.
+
+## Running Venus tests
+
+## Troubleshooting
