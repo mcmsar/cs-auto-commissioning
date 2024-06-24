@@ -74,11 +74,11 @@ Venus can be opened by running the Venus.exe file or a shortcut to it. To run a 
 All configuration values except the working directory may be overridden by the config.xml in the test suite.
 
 ![image](https://github.com/mcmsar/cs-auto-commissioning/assets/19142607/e37d7503-fea7-42fd-b75e-c478ada9e251)
-#### File / Run Test Directory
+### File / Run Test Directory
 Select this step to run the entire suite. Every <number>.xml file will be run in numerical order. They do not need to be consecutive. The working directory will be automatically selected in the list.
-#### File / Run Test
+### File / Run Test
 Select this step to run a single test in the suite.
-#### File / Run Directory from Selected Test
+### File / Run Directory from Selected Test
 Deprecated.
 
 ## Troubleshooting
