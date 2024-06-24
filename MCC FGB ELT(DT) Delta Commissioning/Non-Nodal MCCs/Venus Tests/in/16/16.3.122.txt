@@ -1,0 +1,6 @@
+/00041 00000/#NodalMccDdr1Code#/#CurrentSitTimeTest11# 0950
+/122/#LocalMccCode#/263/01
+/#LocalMccGeolut1Code#/+03635.9 999.9 +99.99/#CurrentSitTimeTest11# 0950 05.00/02
+/#Test41EltDt#
+/LASSIT
+/ENDMSG
