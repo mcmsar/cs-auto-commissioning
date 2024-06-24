@@ -69,3 +69,6 @@ When creating a new Venus test, first select a new test number (they do not need
 ## Running Venus tests
 
 ## Troubleshooting
+As Venus was originally written for internal testing only, it may not provide as many guardrails to alert the user for malformed tests or issues while running.
+
+### Common errors
