@@ -97,7 +97,6 @@ A Venus test XML file is constructed like this:
   </outputs>
 </test>
 ```
-
 The name, description, and config attributes in the `<test>` tag are for reference only. All items betweem <!-- and --> tags are comments, and should be used liberally to document the exact purposes and expected outcomes of the test. The `<outputs>` section is not currently used by Venus and is for reference only, but it may be used in the future so Venus can analyze actual vs expected outputs.
 
 Within the <inputs> section, the following tags are available:
@@ -139,6 +138,33 @@ The parameters for satellite in/out-of view will be replaced last, so `#CurrentS
 + Example: `#MeoSatelliteInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)#`
 
 #### User-defined test parameters
+
+In the config.xml file, there is a `<TestParameters>` section that defines the generic versions of all the items that might need to be replaced with specific data for the DMCC under test. Template parameters are defined with individual tags, where any instance of two \# symbols surrounding text that matches a name in the `<TestParameters>` section will be replaced with the value currently in config.xml. For example, `<LocalMccCode>4310</LocalMccCode>` will cause all instances of `#LocalMccCode#` in input `<sit>` steps to be replaced with `4310`.
+
+The `<TestParameters>` section may look like this:
+```
+  <TestParameters>
+    <LocalMccCode>4310</LocalMccCode>
+    <LocalMccGeolut1Code>4315</LocalMccGeolut1Code>
+    <LocalMccMeolut1Code>4317</LocalMccMeolut1Code>
+
+    <NodalMccDdr1Code>3660</NodalMccDdr1Code>
+    <NodalMccGeolut1Code>3661</NodalMccGeolut1Code>
+    <NodalMccMeolut1Code>3385</NodalMccMeolut1Code>
+
+    <GeoSatelliteOverLocalMcc1>222</GeoSatelliteOverLocalMcc1>
+
+    <!-- Test 1 -->
+    <!-- EPIRB Maritime User Protocol with MID of local MCC, MMSI 400589, default location -->
+    <Test1Epirb1>5AF451A68260668822FBC000000000</Test1Epirb1>
+
+    <!-- Test 2 -->
+    <!-- EPIRB Standard Location Protocol with foreign MID, MMSI 104540, refined location within local MCC SRR -->
+    <Test2Epirb1>9DD21985C023D1574FA3B7000005BF</Test2Epirb1>
+  </TestParameters>
+```
+Test parameters should be written in such a way as to maximize their clarity and reusability from the perspective of an MCC that needs to configure the tests for an arbitrary DMCC.
+
 
 Example test message:
     <!--     /00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy# -->
