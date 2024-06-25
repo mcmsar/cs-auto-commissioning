@@ -109,12 +109,46 @@ For both `<sit>` and `<script>`, the "delay" attribute will cause Venus to wait 
 Input messages are free-form, except for test parameters that Venus will replace, allowing a generic test to be run with SIT time values updated to be based on the current system time, with satellites chosen based on when positions will be in view, and with beacons and positions and other values selected based on the specific DMCC under test.
 
 #### #CurrentSitDateTimeMinuteAccuracy#
-The `#CurrentSitDateTimeMinuteAccuracy#` test parameter is predefined and will be replaced with the current system time in UTC in SIT format "YY DDD HHMM". Offsets to this time can be specified by adding parentheses at the end of the parameter name with one or more signed integer offset sizes followed by a 'y', 'd', 'h', or 'm'.
+The `#CurrentSitDateTimeMinuteAccuracy#` test parameter is predefined and will be replaced with the current system time in UTC in SIT format `YY DDD HHMM`. Offsets to this time can be specified by adding parentheses at the end of the parameter name with one or more signed integer offset sizes followed by a 'y', 'd', 'h', or 'm'.
 
 Examples:
+
 `#CurrentSitDateTimeMinuteAccuracy(1y2d3h4m)#` will offset the current time by +1 year, +2 days, +3 hours, and +4 minutes.
+
 `#CurrentSitDateTimeMinuteAccuracy(+1d)#` will offset the current time by +1 day.
+
 `#CurrentSitDateTimeMinuteAccuracy(-1h+15m)#` will offset the current time by -1 hour and +15 minutes.
+
+#### #LeoSatelliteInView#, #MeoSatelliteInView#, #LeoSatelliteNotInView#, #MeoSatelliteNotInView#
+The `#[LEO/MEO]Satellite[Not]InView#` test parameters are predefined and will be replaced with the three-digit satellite number of the defined type that has the nth-highest elevation, or lowest for NotInView, relative to the location being observed. Each of these parameters take the following arguments (any optional can be omitted, but order does matter):
++ Location being observed (required); format is `([+-]DD.DDD/[+-]DDD.DDD)`; sign can be omitted, precision does not have to be exact
+  + Example: `(+30.000/-070.000)`
+  + Example: `(1.20/0.0000005)`
++ Time of observation (optional); default is current time; format is SIT format with or without seconds
+  + Example: `(24 100 2227)`
+  + Example: `(24 100 2227 12.34)`
++ Satellite ranking (optional); default is 1; format is the integer value indicating the nth-best or nth-worst satellite
+  + Example: `(1)`
+  + Example: `(15)`
+
+The parameters for satellite in/out-of view will be replaced last, so `#CurrentSitDateTimeMinuteAccuracy#` or any user-defined test parameter can be embedded into the satellite parameter and will be included.
++ Example: `#LeoSatelliteInView(20.0/-19.5)#`
++ Example: `#LeoSatelliteNotInView(#LocalLocationTest1#)#`
++ Example: `#MeoSatelliteInView(#LocalLocationTest1#)(#DetectTimeTest1Step1#)#`
++ Example: `#MeoSatelliteNotInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)#`
++ Example: `#MeoSatelliteInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)#`
+
+#### User-defined test parameters
+
+Example test message:
+    <!--     /00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy# -->
+    <!--     /142/#LocalMccCode#/01 -->
+    <!--     /#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitDateTimeMinuteAccuracy(-6m)# 12.30 -->
+    <!--     /#CurrentSitDateTimeMinuteAccuracy(-1m)# 12.31/07/FFFE2F#Test1Epirb1# -->
+    <!--     /12.99/00/01/002 -->
+    <!--     /#MeoSatelliteInView(#LocalLocation#)# #MeoSatelliteInView(#LocalLocation#)(2)# #MeoSatelliteInView(#LocalLocation#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!--     /LASSIT -->
+    <!--     /ENDMSG -->
 
 ### Expected output messages
 
