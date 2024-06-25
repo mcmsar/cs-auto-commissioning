@@ -163,21 +163,24 @@ The `<TestParameters>` section may look like this:
     <Test2Epirb1>9DD21985C023D1574FA3B7000005BF</Test2Epirb1>
   </TestParameters>
 ```
-Test parameters should be written in such a way as to maximize their clarity and reusability from the perspective of an MCC that needs to configure the tests for an arbitrary DMCC.
+Test parameters should be written in such a way as to maximize their clarity and reusability from the perspective of an MCC that needs to configure the tests for an arbitrary DMCC. It is strongly recommended to describe exactly what the test is doing in comments around the test, and what exactly the user is expected to provide for given configurable parameters. A suggested best-practice is to use the same test definition text above the parameters specific to that test as is used for its entry in the accompanying test table produced by C/S to explain the test plan to DMCCs.
 
-
-Example test message:
-    <!--     /00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy# -->
-    <!--     /142/#LocalMccCode#/01 -->
-    <!--     /#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitDateTimeMinuteAccuracy(-6m)# 12.30 -->
-    <!--     /#CurrentSitDateTimeMinuteAccuracy(-1m)# 12.31/07/FFFE2F#Test1Epirb1# -->
-    <!--     /12.99/00/01/002 -->
-    <!--     /#MeoSatelliteInView(#LocalLocation#)# #MeoSatelliteInView(#LocalLocation#)(2)# #MeoSatelliteInView(#LocalLocation#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
-    <!--     /LASSIT -->
-    <!--     /ENDMSG -->
+#### Example input test message
+```
+/00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy#
+/142/#LocalMccCode#/01
+/#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitDateTimeMinuteAccuracy(-6m)# 12.30
+/#CurrentSitDateTimeMinuteAccuracy(-1m)# 12.31/07/FFFE2F#Test1Epirb1#
+/12.99/00/01/002
+/#MeoSatelliteInView(#LocalLocation#)# #MeoSatelliteInView(#LocalLocation#)(2)# #MeoSatelliteInView(#LocalLocation#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/LASSIT
+/ENDMSG
+```
 
 ### Expected output messages
+Expected output messages are useful in comparing the exact message file names and message contents that the HMCC expected to receive from the DMCC. When Venus completes all steps in a test, it will compare all the output message filenames that were received and placed in their corresponding out/n folder with those in the corresponding expected/n folder. Out files are named by the test number, step number, and the name of the facility that sent the message to us, as taken from the original filename. E.g., if a message produced during test 1, step 1 was originally found with the name `DMCC_HMCC_00001.txt`, it would be moved to the out/1 directory with the name `1.1.HMCC.txt`. If it had no corresponding file with the same exact name in the expected/1 directory, it will be shown on the UI as `(+1.1.HMCC)`. If, on the other hand, that file exists in expected/1 and is not received during that test step, it will be shown on the UI as `(-1.1.HMCC)`. If it is received late, during another test step, the numbers may be off, and something like `(-1.1.HMCC) (+1.2.HMCC)` might be displayed, which is a good reason to be permissive with the test step delays. If all output messages were received as expected, Venus will instead just show `Finished`.
 
+The actual contents of the files cannot (currently) be compared with Venus, however there are many applications out there that can do a diff of the directories and provide that information. At TSi, we tend to use [WinMerge](https://winmerge.org/downloads/?lang=en). Compare the out and expected directories in that application, and you can see which files are not identical and what differences there are inside them. This is not quite as accurate when re-using the tests for different DMCCs, and may need more development before it can be very useful here.
 
 ## Running Venus tests
 Venus can be opened by running the Venus.exe file or a shortcut to it. To run a particular test suite, or an individual test within it, you must first update the system configuration (Configuration / System Options menu) and set the Venus Test Working Directory to that of your test suite. The Test Environment should be set to Local. The input message directory is the place where Venus will put messages destined for the DMCC (FTP will be added as an alternative), and the output message directory is the place where Venus will look for messages sent to it by the DMCC. The delay between test steps should be the maximum amount of time that is expected to be needed under normal circumstances for simple cases; individual steps can override this value if longer delays are going to be needed.
