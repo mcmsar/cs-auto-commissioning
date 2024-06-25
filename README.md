@@ -98,15 +98,23 @@ A Venus test XML file is constructed like this:
 </test>
 ```
 
-The name, description, and config attributes in the <test> tag are for reference only. All items betweem <!-- and --> tags are comments, and should be used liberally to document the exact purposes and expected outcomes of the test. The <outputs> section is not currently used by Venus and is for reference only, but it may be used in the future so Venus can analyze actual vs expected outputs.
+The name, description, and config attributes in the `<test>` tag are for reference only. All items betweem <!-- and --> tags are comments, and should be used liberally to document the exact purposes and expected outcomes of the test. The `<outputs>` section is not currently used by Venus and is for reference only, but it may be used in the future so Venus can analyze actual vs expected outputs.
 
 Within the <inputs> section, the following tags are available:
-<sit>: Takes a text file, replaces any test parameters, and writes the resulting file to the configured input message directory. An option to use FTP to write these messages to remote DMCCs will be added.
-<script>: Runs a specified PowerShell script.
-For both <sit> and <script>, the "delay" attribute will cause Venus to wait the given number of seconds before completing that step. Any inputs received during the delay period will be attributed to that step.
+`<sit>`: Takes a text file, replaces any test parameters, and writes the resulting file to the configured input message directory. An option to use FTP to write these messages to remote DMCCs will be added.
+`<script>`: Runs a specified PowerShell script.
+For both `<sit>` and `<script>`, the "delay" attribute will cause Venus to wait the given number of seconds before completing that step. Any inputs received during the delay period will be attributed to that step.
 
 ### Input test messages
+Input messages are free-form, except for test parameters that Venus will replace, allowing a generic test to be run with SIT time values updated to be based on the current system time, with satellites chosen based on when positions will be in view, and with beacons and positions and other values selected based on the specific DMCC under test.
 
+#### #CurrentSitDateTimeMinuteAccuracy#
+The `#CurrentSitDateTimeMinuteAccuracy#` test parameter is predefined and will be replaced with the current system time in UTC in SIT format "YY DDD HHMM". Offsets to this time can be specified by adding parentheses at the end of the parameter name with one or more signed integer offset sizes followed by a 'y', 'd', 'h', or 'm'.
+
+Examples:
+`#CurrentSitDateTimeMinuteAccuracy(1y2d3h4m)#` will offset the current time by +1 year, +2 days, +3 hours, and +4 minutes.
+`#CurrentSitDateTimeMinuteAccuracy(+1d)#` will offset the current time by +1 day.
+`#CurrentSitDateTimeMinuteAccuracy(-1h+15m)#` will offset the current time by -1 hour and +15 minutes.
 
 ### Expected output messages
 
