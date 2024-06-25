@@ -100,6 +100,10 @@ A Venus test XML file is constructed like this:
 
 The name, description, and config attributes in the <test> tag are for reference only. All items betweem <!-- and --> tags are comments, and should be used liberally to document the exact purposes and expected outcomes of the test. The <outputs> section is not currently used by Venus and is for reference only, but it may be used in the future so Venus can analyze actual vs expected outputs.
 
+Within the <inputs> section, the following tags are available:
+<sit>: Takes a text file, replaces any test parameters, and writes the resulting file to the configured input message directory. An option to use FTP to write these messages to remote DMCCs will be added.
+<script>: Runs a specified PowerShell script.
+For both <sit> and <script>, the "delay" attribute will cause Venus to wait the given number of seconds before completing that step. Any inputs received during the delay period will be attributed to that step.
 
 ### Input test messages
 
