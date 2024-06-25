@@ -64,9 +64,48 @@ A Venus test suite consists of a general config.xml file, a series of XML files 
     + ...
    
 ## Writing Venus test scripts
-When creating a new Venus test, first select a new test number (they do not need to be consecutive), then create a corresponding XML file, in, out, and expected directory. **Because GitHub does not support empty directories, store a blank ".gitkeep" file in the out and expected directories.** For example, for test 1, there will be 1.xml, in/1, out/1, out/1/.gitkeep, expected/1, and expected/1/.gitkeep. It is recommended to use a previous XML test for a template.
 
-More details TBA.
+### Parent test XML files
+When creating a new Venus test, first select a new test number (they do not need to be consecutive), then create a corresponding XML file, in, out, and expected directory. **Because GitHub does not support empty directories, store a blank ".gitkeep" file in the out and expected directories.** For example, for test 1, there will be 1.xml, in/1, out/1, out/1/.gitkeep, expected/1, and expected/1/.gitkeep. It is recommended to use a previous or blank XML test for a template.
+
+A Venus test XML file is constructed like this:
+```
+<test
+  name="Test 1: Site confirmation with I7 DOA + GNSS"
+  description="Tests that a site with a single I7 incident results in confirmation."
+  config="LGM Commissioning nodal MCC">
+  <inputs>
+    <sit>in\1\1.1.147.txt</sit>                   <!-- I7 MEO in local DDR, local MID -->
+    <script delay="601">in\1.2.noop.ps1</script>  <!-- Wait 10 minutes and 1 second -->
+    <sit>in\1\1.3.147.txt</sit>                   <!-- I7 MEO same positions -->
+    <script delay="300">in\1.4.noop.ps1</script>  <!-- Wait 5 minutes -->
+    <sit>in\1\1.5.147.txt</sit>                   <!-- I7 MEO same positions -->
+  </inputs>
+  <outputs>
+    <!-- Step 1: Sw0 + I7 -> Aw7 to "RIP" -->
+    <!-- Local RCC(s): SIT 185 INITIAL LOCATED ALERT, contains MCC REFERENCE -->
+    <!-- Local RCC(s): SIT 185 NOCR, contains MCC REFERENCE -->
+
+    <!-- Step 2: No messages -->
+
+    <!-- Step 3: Sw7 + I7 -> Ct0 due to DBE = 1 (under 15 minutes) -->
+
+    <!-- Step 4: No messages -->
+
+    <!-- Step 5: Sw7 + I7 -> Ct7 due to DBE = 0 (more than 15 minutes) -->
+    <!-- Local RCC(s): SIT 185 POSITION UPDATE ALERT, contains MCC REFERENCE -->
+  </outputs>
+</test>
+```
+
+The name, description, and config attributes in the <test> tag are for reference only. All items betweem <!-- and --> tags are comments, and should be used liberally to document the exact purposes and expected outcomes of the test. The <outputs> section is not currently used by Venus and is for reference only, but it may be used in the future so Venus can analyze actual vs expected outputs.
+
+
+### Input test messages
+
+
+### Expected output messages
+
 
 ## Running Venus tests
 Venus can be opened by running the Venus.exe file or a shortcut to it. To run a particular test suite, or an individual test within it, you must first update the system configuration (Configuration / System Options menu) and set the Venus Test Working Directory to that of your test suite. The Test Environment should be set to Local. The input message directory is the place where Venus will put messages destined for the DMCC (FTP will be added as an alternative), and the output message directory is the place where Venus will look for messages sent to it by the DMCC. The delay between test steps should be the maximum amount of time that is expected to be needed under normal circumstances for simple cases; individual steps can override this value if longer delays are going to be needed.
