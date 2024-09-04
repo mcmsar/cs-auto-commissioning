@@ -1,0 +1,22 @@
+<test name="Send a SIT 145 message to the ALMCC for an Albanian coded ELT(DT) with FGB message bits 41 – 42 = 11 (invalid value) and DOA position in ALMCC Service Area. Expected result: the ALMCC sends a SIT 185 Initial Located Alert to the Libya with DOA position that notes the unreliable beacon message and does not send an NOCR to the SPMCC nor an alert to the LADR (since the beacon message is not usable)." description=" Expected result: the DMCC sends a SIT 185 Initial Located Alert to the local SPOC/RCC with DOA position that notes the unreliable beacon message and does not send an NOCR to the ITMCC nor an alert for the LADR through the FMCC (since the beacon message is not usable)." config="Generic">
+  <inputs>
+    <!--<sit delay="2">in\2\2.1.122.txt</sit-->
+	<!-- I3 LEO/GEO -->
+    <sit>in\1\1.1.145.txt</sit> <!-- I3 MEO -->
+  </inputs>
+  <outputs>
+	<!-- Step 1: Sw0 + I3 -> Aw3 to "E" (in local service area), results in a 132 to MCC with beacon country code and RCC messages -->
+    <!-- <sit trans="net" time="2016/03/31 11:32">out\2\2.1.FMCC.txt</sit> -->
+	<!-- <sit trans="net" time="2016/03/31 11:32">out\2\2.1.RCC1.txt</sit> -->
+
+	<!-- Step 2: Sw3 + I3 -> Aw0 to no destinations -->
+  </outputs>
+</test>
+
+
+
+
+
+
+
+

@@ -1,0 +1,515 @@
+<!--
+  This configuration file allows specific options to be set for this test suite. Any equivalent options set by the user
+  in the Venus application itself will be overridden if they are specified in this file.
+-->
+<Config>
+	<!-- The type of test environment for which this test suite is designed. Options: -->
+	<!-- TsiLocal: This test suite can interact with the TSi MCC database and insar directory structure in order to do -->
+    <!--   more complex and complete tests. -->
+    <!-- Local: This test suite will be run on the same local system as the software under test. Database and other -->
+    <!--   software-specific options will be disabled. -->
+    <TestEnvironment>Local</TestEnvironment>
+
+	<!-- Time in seconds to delay between every individual test step. -->
+	<!-- Enough time should be allotted so that all expected outputs will be received before the delay has completed. -->
+    <!-- If a delay is specified directly in a test step, that delay will override this setting. -->
+	<DelayBetweenStepsSeconds>5</DelayBetweenStepsSeconds>
+
+	<!-- Time in seconds to delay at the very end of the test. -->
+	<!-- Time at the end of a test may be needed for all processing or final tasks to complete. -->
+	<DelayAtEndOfTestSeconds>5</DelayAtEndOfTestSeconds>
+
+	<!-- The directory to dropoff input files to the application under test. -->
+	<InputMessageDirectory>C:\insar\ftp\</InputMessageDirectory>
+
+	<!-- The directory to pickup output files from the application under test. -->
+	<OutputMessageDirectory>C:\insar\lan_out\</OutputMessageDirectory>
+
+
+    <!-- The list of available satellites for use in any test where the detecting satellite parameter needs to be selected -->
+    <!-- in order to be in or out of footprint. GEO satellites are not supported here and should instead be provided in TestParameters. -->
+    <!-- By default, Venus will download TLEs and match them to the configured satellite with the same NORAD number, however, -->
+    <!-- the TLE may also be manually specified instead. -->
+    <!-- All satellites here must also be configured in the MCC under test, or else the MCC may reject messages due to an unknown -->
+    <!-- satellite. Remove or comment-out any satellites that will not be accepted at the MCC when the test is run. -->
+
+    <!-- Attributes that must be included are: -->
+    <!--     Type: "LEO" or "MEO" -->
+    <!--     SarsatId: The C/S number for a given satellite, e.g.: 7, 114, 302 -->
+    <!--     NoradNumber: The NORAD identifying number for a given satellite as will be found in a TLE, e.g.: 25338 -->
+    <!-- Optional attributes: -->
+    <!--     MinElevation: The minimum elevation between the satellite and location to be considered within its footprint; default -5.0 -->
+    <!-- Optionally, a value may be provided in TLE form for any satellite, including LEO. If set, Venus will use that instead of any -->
+    <!-- TLE downloaded from the TLE source URL. Only lines 1 and 2 of the TLE should be included, e.g.: -->
+    <!--     <Satellite Type="LEO" SarsatId="7" NoradNumber="25338" MinElevation="-5.0"> -->
+    <!--         1 25338U 98030A   24098.81789746  .00000212  00000+0  10560-3 0  9993 -->
+    <!--         2 25338  98.5762 127.3938 0010740 164.4996 195.6515 14.26529187347409 -->
+    <!--     </Satellite> -->
+
+    <!-- See below for information on how to use these satellites in test steps. -->
+    <Satellites>
+        <TleSourceUrl>https://celestrak.org/NORAD/elements/sarsat.txt</TleSourceUrl>
+
+        <Satellite Type="LEO" SarsatId="7" NoradNumber="25338" MinElevation="-5.0"/>
+        <Satellite Type="LEO" SarsatId="10" NoradNumber="28654"/>
+        <Satellite Type="LEO" SarsatId="12" NoradNumber="33591"/>
+        <Satellite Type="LEO" SarsatId="13" NoradNumber="38771"/>
+        <Satellite Type="LEO" SarsatId="114" NoradNumber="44387"/>
+
+        <Satellite Type="MEO" SarsatId="302" NoradNumber="28474"/>
+        <Satellite Type="MEO" SarsatId="303" NoradNumber="40294"/>
+        <Satellite Type="MEO" SarsatId="306" NoradNumber="39741"/>
+        <Satellite Type="MEO" SarsatId="308" NoradNumber="40730"/>
+        <Satellite Type="MEO" SarsatId="309" NoradNumber="40105"/>
+        <Satellite Type="MEO" SarsatId="310" NoradNumber="41019"/>
+        <Satellite Type="MEO" SarsatId="312" NoradNumber="29601"/>
+        <Satellite Type="MEO" SarsatId="315" NoradNumber="32260"/>
+        <Satellite Type="MEO" SarsatId="316" NoradNumber="27663"/>
+        <Satellite Type="MEO" SarsatId="317" NoradNumber="28874"/>
+        <Satellite Type="MEO" SarsatId="318" NoradNumber="26690"/>
+        <Satellite Type="MEO" SarsatId="319" NoradNumber="28190"/>
+        <Satellite Type="MEO" SarsatId="323" NoradNumber="28361"/>
+        <Satellite Type="MEO" SarsatId="324" NoradNumber="38833"/>
+        <Satellite Type="MEO" SarsatId="326" NoradNumber="40534"/>
+        <Satellite Type="MEO" SarsatId="327" NoradNumber="39166"/>
+        <Satellite Type="MEO" SarsatId="329" NoradNumber="32384"/>
+        <Satellite Type="MEO" SarsatId="330" NoradNumber="39533"/>
+        <Satellite Type="MEO" SarsatId="332" NoradNumber="41328"/>
+        <Satellite Type="MEO" SarsatId="402" NoradNumber="41549"/>
+        <Satellite Type="MEO" SarsatId="403" NoradNumber="41860"/>
+        <Satellite Type="MEO" SarsatId="404" NoradNumber="41861"/>
+        <Satellite Type="MEO" SarsatId="405" NoradNumber="41862"/>
+        <Satellite Type="MEO" SarsatId="407" NoradNumber="41859"/>
+        <Satellite Type="MEO" SarsatId="408" NoradNumber="41175"/>
+        <Satellite Type="MEO" SarsatId="409" NoradNumber="41174"/>
+        <Satellite Type="MEO" SarsatId="413" NoradNumber="43567"/>
+        <Satellite Type="MEO" SarsatId="415" NoradNumber="43564"/>
+        <Satellite Type="MEO" SarsatId="419" NoradNumber="38857"/>
+        <Satellite Type="MEO" SarsatId="421" NoradNumber="43055"/>
+        <Satellite Type="MEO" SarsatId="424" NoradNumber="40889"/>
+        <Satellite Type="MEO" SarsatId="425" NoradNumber="43056"/>
+        <Satellite Type="MEO" SarsatId="426" NoradNumber="40544"/>
+        <Satellite Type="MEO" SarsatId="427" NoradNumber="43057"/>
+        <Satellite Type="MEO" SarsatId="430" NoradNumber="40890"/>
+        <Satellite Type="MEO" SarsatId="431" NoradNumber="43058"/>
+        <Satellite Type="MEO" SarsatId="433" NoradNumber="43565"/>
+        <Satellite Type="MEO" SarsatId="436" NoradNumber="43566"/>
+    </Satellites>
+
+
+    <!-- TestParameters defines a list parameters that will be replaced in input SIT messages with specified values. -->
+    <!-- The parameter name must be surrounded by '#' symbols in the message. -->
+    <!-- Whitespace before and after the specified value in this config file will be removed. -->
+
+    <!-- The parameter "#CurrentSitDateTimeMinuteAccuracy#" is predefined and will be replaced with the current -->
+    <!-- system time in UTC in SIT format "YY DDD HHMM". Offsets to this time can be specified by adding parentheses -->
+    <!-- at the end of the parameter name with one or more integer offset sizes followed by a 'y', 'd', 'h', or 'm'. -->
+    <!-- Examples: -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(1y2d3h4m)# will offset the current time by +1 year, +2 days, +3 hours, -->
+    <!--    and +4 minutes. -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(+1d)# will offset the current time by +1 day. -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(-1h+15m)# will offset the current time by -1 hour and +15 minutes. -->
+
+    <!-- The parameters "#LeoSatelliteInView#", "#MeoSatelliteInView#", "#LeoSatelliteNotInView#", and -->
+    <!-- "#MeoSatelliteNotInView#" are predefined and will be replaced with the three-digit satellite number -->
+    <!-- of the defined type that has the nth-highest elevation, or lowest for NotInView, relative to the location -->
+    <!-- being observed. -->
+    <!-- Each of these parameters take the following arguments (any optional can be omitted, but order does matter): -->
+    <!--     Location being observed (required); format is "([+-]DD.DDD/[+-]DDD.DDD)"; sign can be omitted, precision does not have to be exact -->
+    <!--         Example: (+30.000/-070.000) -->
+    <!--         Example: (1.20/0.0000005) -->
+    <!--     Time of observation (optional); default is current time; format is SIT format with or without seconds -->
+    <!--         Example: (24 100 2227) -->
+    <!--         Example: (24 100 2227 12.34) -->
+    <!--     Satellite ranking (optional); default is 1; format is the integer value indicating the nth-best or nth-worst satellite -->
+    <!--         Example: (1) -->
+    <!--         Example: (15) -->
+    <!-- The satellite in/out-of view parameters will be replaced last, so CurrentSitDateTime or any user-defined test parameter -->
+    <!-- can be embedded into the satellite parameter and will be include. -->
+    <!-- Example: #LeoSatelliteInView(20.0/-19.5)# -->
+    <!-- Example: #LeoSatelliteNotInView(#LocalLocationTest1#)# -->
+    <!-- Example: #MeoSatelliteInView(#LocalLocationTest1#)(#DetectTimeTest1Step1#)# -->
+    <!-- Example: #MeoSatelliteNotInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)# -->
+    <!-- Example: #MeoSatelliteInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)#(2) -->
+    <!-- Example test message: -->
+    <!--     /00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy# -->
+    <!--     /142/#LocalMccCode#/01 -->
+    <!--     /#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitDateTimeMinuteAccuracy(-6m)# 12.30 -->
+    <!--     /#CurrentSitDateTimeMinuteAccuracy(-1m)# 12.31/07/FFFE2F#Test1Epirb1# -->
+    <!--     /12.99/00/01/002 -->
+    <!--     /#MeoSatelliteInView(#LocalLocation#)# #MeoSatelliteInView(#LocalLocation#)(2)# #MeoSatelliteInView(#LocalLocation#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!--     /LASSIT -->
+    <!--     /ENDMSG -->
+
+
+    <!-- Example: -->
+    <!-- <TestParameters> -->
+    <!--     <LocalMccCode>3660</LocalMccCode> -->
+    <!--     <LocalMeolutCode>3669</LocalMeolutCode> -->
+    <!--     <LocalFgb1> -->
+    <!--         D6E30F3C0618618C46EAEFE0FF0146 -->
+    <!--     </LocalFgb1> -->
+    <!--     <Location1>+38.948/-076.831</Location1> -->
+    <!-- <TestParameters> -->
+
+    <!-- Example input file: -->
+    <!-- /00001 00000/#LocalMeolutCode#/#CurrentSitDateTimeMinuteAccuracy# -->
+    <!-- /145/#LocalMccCode#/01 -->
+    <!-- /#LocalMeolutCode#/+14968.0 999.9 +00.00/#CurrentSitDateTimeMinuteAccuracy(-5m)# 48.48 -->
+    <!-- /#CurrentSitDateTimeMinuteAccuracy(-3m)# 48.89/03/FFFE2F#LocalFgb1# -->
+    <!-- /-366/#Location1#/872/010.00 -->
+    <!-- /38.50/00/00/00.000000/00/005/018 012.2 003.6 -->
+    <!-- /#MeoSatelliteInView(#Location1#)# #MeoSatelliteInView(#Location1#)(2)# #MeoSatelliteInView(#Location1#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!-- /LASSIT -->
+    <!-- /ENDMSG -->
+
+    <!-- Resulting file to be passed on to the application under test: -->
+    <!-- /00001 00000/3669/23 268 2007 -->
+    <!-- /145/3660/01 -->
+    <!-- /3669/+14968.0 999.9 +00.00/23 268 2002 48.48 -->
+    <!-- /23 268 2004 48.89/03/FFFE2FD6E30F3C0618618C46EAEFE0FF0146 -->
+    <!-- /-366/+38.948/-076.831/872/010.00 -->
+    <!-- /38.50/00/00/00.000000/00/005/018 012.2 003.6 -->
+    <!-- /329 315 302 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!-- /LASSIT -->
+    <!-- /ENDMSG -->
+    <TestParameters>
+        <LocalMccCode>4660</LocalMccCode>
+        <LocalMccGeolut1Code>4662</LocalMccGeolut1Code>
+        <LocalMccMeolut1Code>4663</LocalMccMeolut1Code>
+		<LocalMccLeolut1Code>4661</LocalMccLeolut1Code>
+		
+		
+		<NodalMccDdr1Code>2240</NodalMccDdr1Code>
+        <NodalMccGeolut1Code>2242</NodalMccGeolut1Code>
+        <NodalMccMeolut1Code>2244</NodalMccMeolut1Code>
+		<NodalMccLeolut1Code>2241</NodalMccLeolut1Code>
+		
+		<CurrentSitTimeTest11>24 109</CurrentSitTimeTest11>
+      	
+        <!-- Test 1 --> 
+        <!-- Send a SIT 145 message to the DMCC for an Albanian coded ELT(DT) with FGB message bits 41 – 42 = 11 (invalid value) and DOA position in the DMCC. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position that notes the unreliable beacon message and does not send an NOCR to its nodal MCC nor an alert to its nodal MCC for the LADR (since the beacon message is not usable). -->
+        <Test1EltDt>8C99C000001FEFFC8F62C00626EF80</Test1EltDt>
+		<Location1>-466/+25.506/+050.914</Location1>
+		
+		<!-- Test 2 --> 
+        <!--Send a SIT 145 message to the DMCC for an Albanian coded ELT(DT) with FGB message bits 107 – 108 = 11 (invalid value) and DOA position in the DMCC. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position that notes the unreliable beacon message and does not send an NOCR to the FMCC nor an alert to the LADR (since the beacon message is not usable). -->
+        <Test2EltDt>8C998000001FEFFD2FB5B00626EC28</Test2EltDt>
+		<Location2>-466/+25.506/+050.914</Location2>
+		
+		<!-- Test 3 --> 
+        <!--Send a SIT 145 message to the DMCC for an Albanian coded ELT(DT) with FGB message bits 113 – 114 = 00 and bits 115 – 117 = 001 (invalid value), other message bits valid, and DOA position in the DMCC. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position that notes the unreliable beacon message and does not send an NOCR to the FMCC nor an alert to the LADR (since the beacon message is not usable). -->
+        <Test3EltDt>8C998000005FEFFDA627800E26E47C</Test3EltDt>
+		<Location3>-466/+25.506/+050.914</Location3>
+		
+				<!-- Test 4 --> 
+        <!--Prerequisite: the DMCC capability to distribute a FGB ELT(DT) alert has been verified. Have the DMCC disable ELT(DT) alert processing. Send a SIT 145 message to the DMCC for a valid ELT(DT) Russian coded beacon with DOA position in the DMCC, ensuring that the alert is not redundant (e.g., the beacon ID is new). Expected result: the DMCC does not distribute the alert (i.e., no alert to a local RCC, no NOCR to a local RCC and no alert to the LADR). Note: Once the test is complete, have the DMCC re-enable ELT(DT) alert processing. -->
+        <Test4EltDt>A5D9612B0CC6632843328F0460ADC5</Test4EltDt>
+		<Location4>-466/+24.918/+050.812</Location4>
+		
+				<!-- Test 5 --> 
+        <!-- Send a SIT 125 message to the DMCC for a valid ELT(DT) Russian coded beacon from LUT 4191 with Doppler position in France and Italy, encoded position (+44.000/+002.000) in France within the satellite footprint, that does not match the doppler, ensuring that the alert is not redundant (e.g., the beacon ID is new). Expected result: the DMCC does not distribute the alert to Doppler position (i.e., no alert to the FMCC). Distribution based only on beacon message (SIT 122) message sent to FMCC based on the encoded position). the DMCC sends a NOCR to a local RCC in national format and sends an alert to the LADR. -->
+        <Test5EltDt>A5D9612B0D06632BFFCC8F0460ADC5</Test5EltDt>
+		<Location5.1>+466/+25.356/+051.688</Location5.1>
+		<Location5.2>+470/+24.638/+054.583</Location5.2>
+		
+				<!-- Test 6 --> 
+        <!--Overview: Verify the DMCC capability to filter or distribute DOA position from a MEOLUT for ELT(DT)s, based on DMCC configuration indicating if the MEOLUT is commissioning for fast-moving beacons. Update the DMCC configuration to set the DMCC MEOLUT as not commissioned to provide DOA locations for fast-moving beacons. The DMCC is so configured. Note: Once the test is complete, have the DMCC re-configure the DMCC MEOLUT as commissioned to provide DOA locations for fast-moving beacons, if required.--> 
+ 
+	
+        <!-- Send a SIT 145 message to the DMCC from LUT 2737 for an Albanian coded ELT(DT), and DOA position in the DMCC and an encoded position (+041.000/+015.000) in Italy inside satellite footprint. Expected result: the DMCC does not send a SIT 185 Alert to the Mali SPOC but sends a SIT 142 message to the FMCC and sends an alert to the LADR. --> 
+        <Test6EltDt>8C9908D08906633DF4684F0613324C</Test6EltDt>
+		<Location6>-466/+25.994/+051.549</Location6>
+		
+		        <!-- Test 7 --> 
+        <!--Prerequisite: the DMCC shall configure the nodal AUMCC as not FGB ELT(DT) capable. The DMCC is so configured. Send a SIT 145 message to the DMCC for an Australian coded ELT(DT), and DOA position in Australia. Expected result: the DMCC sends a SIT 185 Initial Located Alert within a SIT 915 message to the AUMCC (and optionally sends a SIT 185 NOCR within a SIT 915 to the AUMCC).-->
+        <Test7EltDt>9F797BCC005FEFF995F34F0770C6A0</Test7EltDt>
+		<Location7>-601/+25.411/+051.209</Location7>
+		
+		        <!-- Test 8-1 --> 
+        <!--MCCs shall filter alert data (including NOCRs) associated with test protocol beacon messages (including SGB messages with bit 43 =1 in the 154-bit main field and FGB ELT(DT) messages with bits 43 – 66 = all “1”s or all “0”s).
+
+
+         Test 1: 
+		 Send a SIT 145 message to the DMCC for a Greek coded ELT(DT) Location Test protocol with bits 43 – 66 = all “1”s, and DOA position in Greece. Expected result: the DMCC does not send a SIT 145 message to the FMCC nor a message to the LADR, nor an optional NOCR message to the FMCC.-->  
+    	<Test8EltDt>8ED9BFFFFFDFEFF995A08F05AD6D70</Test8EltDt>
+		<Location8>-466/+25.506/+050.914</Location8>
+				   
+		            <!-- Test 8-2 --> 
+        <!--Test 2
+        Send a SIT 145 message to the DMCC for a Italian coded ELT(DT) Location Test protocol with bits 43 – 66 = all “0”s, and DOA position in Italy. Expected result: the DMCC does not send a SIT 145 message to the FMCC nor a message to the LADR, nor an optional NOCR message to the FMCC.-->
+        <Test9EltDt>8F798000001FEFFFA2158F05AD6D70</Test9EltDt>
+		<Location9>-466/+25.684/+051.514</Location9>
+		
+		        <!-- Test 8-3 --> 
+        <!--Test 3
+        Send a SIT 145 message to the DMCC for a Norway coded ELT(DT) with bits 43 – 65 = all “1”s and only bit 66 is set to 0, and DOA position in Norway. Expected result: the DMCC sends a SIT 145 message to FMCC, and optionally a NOCR message to FMCC. No message expected for LADR by the DMCC as according to section 3.12 of A.001 : “The destination nodal MCC (where distribution is based on position data in the current alert or the country coded in the beacon message, and previous destinations) shall provide an alert for an ELT(DT) to the LADR.”. That is, the FMCC (not the DMCC) should send the alert to the LADR because the position is in Norway -->
+        <Test10EltDt>9019BFFFFF9FEFFABB0C0F05AD6D70</Test10EltDt>
+		<Location10>-466/+25.425/+051.512</Location10>
+		
+		             <!-- Test 9.1 --> 
+        <!--Prerequisite: the DMCC shall configure the distribution to the LADR (if implemented). The DMCC is not able to send message to the LADR, which is still under development, but generates messages with content in FIXM/XML format for the LADR. Also, the USMCC and the SPMCC shall be configured in the DMCC as FGB ELT(DT) capable. The DMCC is so configured.
+
+
+        Message 1
+        Send a SIT 142 message to the DMCC for a Turkish coded ELT(DT) with a 24 Bit Address and 3LD, and no encoded position. Expected result: the DMCC sends a SIT 142 message to the FMCC, but does not send a message to the LADR. That is, the FMCC (not the DMCC) should send the alert to the LADR because unlocated alert, and so not located in the DMCC -->
+        <Test11EltDt>90F90AB50C9FEFFBA7354F0070CA42</Test11EltDt>
+		<!--<Location11>-02.543/-053.542</Location11>--> 
+		
+		
+				
+		              <!-- Test 9.2 --> 
+        <!--Message 2
+        Send a SIT 142 message to the DMCC for the same Turkish coded ELT(DT) with an encoded 3LD and encoded position (+062.000/+052.000) located in the DMCC area within the satellite footprint, and same reference time as message 1 (time of last burst). Expected result: the DMCC sends a SIT 185 INITIAL Located ALERT message to a local RCC and a NOCR message SIT 136 to TRMCC through FMCC. Message expected for LADR due to the first position data. -->
+        <Test12EltDt>90F90AB50C86833931FB4F0070CA42</Test12EltDt>
+		<!--<Location11>-02.543/-053.542</Location11>-->   
+		
+		              <!-- Test 9.3 --> 
+        <!-- Message 3
+		Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+062.000/+052.000) located in the DMCC area within the satellite footprint, DOA position located in France and same reference time as message 1 (time of last burst). Expected result: the DMCC sends a SIT 185 Position CONFLICT message to a local RCC, and a SIT 146 message to the FMCC. No NOCR expected for TRMCC. Message not sent to the LADR since the position data is “redundant” (per A.001 section 4.12 – ‘The destination nodal MCC …shall provide an alert for an ELT(DT) to the LADR when the Aircraft Operator for the ELT(DT) is available and: … b) position data* in the new alert has not been previously sent to the LADR by the nodal MCC with a reference time within three (3) seconds of the reference time of the new alert’). -->
+        <Test13EltDt>90F90AB50C86833931FB4F0070CA42</Test13EltDt>
+		<Location13>-466/+25.506/+050.914</Location13>  
+		
+
+                       <!-- Test 9.4 --> 
+        <!--Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+062.000/+052.000) located in the DMCC area within the satellite footprint, DOA position located in the DMCC that matches with encoded and reference time that differs by one (1) second from the reference time (time of last burst) for all previously sent alerts. Expected result: the DMCC does not send any message -->
+        <Test14EltDt>90F90AB50C86833931FB4F0070CA42</Test14EltDt>
+		<Location14>-466/+26.004/+051.559</Location14>
+
+                       <!-- Test 9.5 --> 
+        <!--Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+62.000/+052.000) located in the DMCC within the satellite footprint, DOA position located in the DMCC that matches with encoded and reference time that differs by four (4) seconds from the reference time (time of last burst) for all previously sent alerts. Expected result: the DMCC sends a SIT 185 DOA Position Match message to the local RCC and a SIT 145 message to the FMCC. No NOCR nor position confirmation message expected. Message expected for LADR -->
+		            
+        <Test15EltDt>90F90AB50C86833931FB4F0070CA42</Test15EltDt>
+		<Location15>-466/+26.014/+051.569</Location15>	
+		
+      	              <!-- Test 9.6 --> 
+        <!--Message 6
+        Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+62.000/+052.000) located in the DMCC within the satellite footprint, DOA position located in the DMCC and reference time that differs by 31 seconds from the earliest reference time (time of last burst) for all previously received alerts. Expected result: the DMCC only sends a message for the LADR -->
+		            
+        <Test16EltDt>90F90AB50C86833931FB4F0070CA42</Test16EltDt>
+		<Location16>-466/+26.024/+051.579</Location16>
+		
+		            <!-- Test 9.7 --> 
+        <!--Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+62.000/+052.000) located in the DMCC within the satellite footprint, DOA position located in Algeria and reference time that differs by 301 seconds from the most recent reference time (time of last burst) for all previously sent alerts (i.e., message 5). Expected result: due to the new Service Area (Algeria), the DMCC sends a SIT 146 message to the SPMCC and to the FMCC, a SIT 185 Position Conflict message to a local RCC; the DMCC also sends the message to LADR. -->
+		            
+        <Test17EltDt>90F90AB50C86833931FB4F0070CA42</Test17EltDt>
+		<Location17>-466/+25.425/+051.512</Location17>
+
+
+                      <!-- Test 9.8 --> 
+        <!--Message 8
+        Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+62.000/+052.000) located in the DMCC within the satellite footprint, DOA position located in Algeria and reference time that differs by 300 seconds from the most recent reference time (time of last burst) for all previously sent alerts (i.e., message 7). Expected result: the DMCC only sends a Message to the LADR. -->
+		            
+        <Test18EltDt>90F90AB50C86833931FB4F0070CA42</Test18EltDt>
+		<Location18>-466/+25.425/+051.612</Location18>
+		
+		
+		           <!-- Test 9.9 --> 
+        <!--Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+27.5, +11.0) located in Algeria within the satellite footprint, DOA position located in Algeria that matches encoded, and reference time that differs by 9 minutes from the reference time (time of last burst) for all previously sent alerts (i.e message 7). Expected result: the DMCC only sends a message for the LADR -->
+		            
+        <Test19EltDt>90F90AB50C86633F3B390F0070CA42</Test19EltDt>
+		<Location19>-466/+25.425/+051.512</Location19>
+		
+		          <!-- Test 9.10 --> 
+        <!--Send a SIT 145 message to the DMCC for the same Turkish coded ELT(DT) and encoded position (+27.500, +011.000) located in Algeria within the satellite footprint, DOA position located in Algeria that matches encoded, and reference time that differs by 10 minutes and 5 seconds from the reference time (time of last burst) for all previously sent alerts. Expected result: the DMCC sends a SIT 185 DOA Position Match message to a local RCC, and a SIT 145 message to the SPMCC and the FMCC. Message expected for LADR -->
+		            
+        <Test20EltDt>90F90AB50C86633F3B390F0070CA42</Test20EltDt>
+		<Location20>-466/+25.435/+051.522</Location20>
+		
+		         <!-- Test 10.1 --> 
+        <!--Prerequisite: the DMCC shall configure the source MEOLUT 2737 as fast-moving beacon DOA location accuracy capable but not processing anomaly capable. The DMCC shall configure the INMCC as LEOSAR/GEOSAR and not FGB ELT(DT) capable. The DMCC shall configure the PAMCC as LGM capable and not FGB ELT(DT) capable. The DMCC is so configured.-->
+        
+		<!-- Test 1
+		1) Send a SIT 142 message to the DMCC for unregistered Mali coded ELT(DT) beacon, and encoded position (+20.5, +79.0) located in India within the satellite footprint, and uncorroborated alert (i.e., the associated detect times per Message Fields #14a and #14b in document C/S A.002 are within 2.5 seconds and from a single satellite per Message Field #83). Expected result: the DMCC sends a SIT 136 NOCR message to the SPMCC, a SIT 185 Initial Located Alert within a SIT 915 message to the INMCC and a message to the LADR. -->
+		            
+        <Test21EltDt>9BF963490086632CAAE5CF06234399</Test21EltDt>
+
+		
+		        <!-- Test 10.2 --> 
+        <!--Test 2
+        2) Send a SIT 142 message to the DMCC for a different unregistered Mali coded ELT(DT) beacon, and encoded position (+30.5, +70.5) in Pakistan within the satellite footprint, and uncorroborated alert (i.e., the associated detect times per Message Fields #14a and #14b in document C/S A.002 are within 2.5 seconds and from a single satellite per Message Field #83). Expected result: the DMCC sends a SIT 136 NOCR message to the SPMCC, a SIT 185 Initial Located Alert within a SIT 915 message to the PAMCC and a message to the LADR. -->
+          		.... -->
+		            
+        <Test22EltDt>9D99048D1586633CA5BB4F0461290B</Test22EltDt>
+		
+		          <!-- Test 11.1 
+				  Overview: Verify DMCC Operator ability to configure the DMCC to process FGB ELT(DT)s by Hex ID.  At least one of the following two tests should be performed. --> 
+				  
+        <!--Test 1
+        Prerequisites: the DMCC properly filters alerts for test coded ELT(DT)s when no special filtering is enabled, per “Processing of test message” above. The DMCC shall force the distribution to a local RCC for the Mexican ELT(DT) beacon 2B337FFFFFBFDFF 
+
+        Send a SIT 145 message to the DMCC for this Mexican coded ELT(DT) Location Test protocol with bits 43 – 66 = all “1”s (Test), and DOA position in Brazil. Expected result: the DMCC does not send a SIT 145 nor a NOCR message to the USMCC as coded Test beacon, but sends a SIT 185 INITIAL ALERT message to a local RCC. -->
+		            
+        <Test23EltDt>9599BFFFFFDFEFFB74F7CF01E17C9F</Test23EltDt>
+		<Location23>-466/+25.356/+051.688</Location23>
+		
+		          <!-- Test 11.2 
+				  --> 
+				  
+        <!--Test 2
+        Prerequisite: the DMCC shall force the distribution to a local RCC for the Mexican ELT(DT) beacon 2B330000003FDFF 
+
+        Send a SIT 145 message to the DMCC for this Mexican coded ELT(DT) Location Test protocol with bits 43 – 66 = all “0”s (Test), and DOA position in Brazil. Expected result: the DMCC does not send a SIT 145 nor a NOCR message to USMCC as coded Test beacon, but sends a SIT 185 INITIAL ALERT to a local RCC. -->
+		            
+        <Test24EltDt>95998000001FEFFB93CB0FE1F0FC30</Test24EltDt>
+		<Location24>-466/+25.356/+051.688</Location24>
+		
+		         <!-- Test 12  --> 
+				  
+        <!-- Overview: Verify DMCC Operator ability to configure the DMCC to filter based on beacon ID for FGB ELT(DT)s
+
+        Prerequisite: the DMCC shall filter the distribution for the French ELT(DT) beacon 1C737AE006BFDFF. 
+
+  
+        Send a SIT 145 message to the DMCC for this French coded ELT(DT) beacon, encoded position (+52.500/-108.5) in Canada within the satellite footprint and DOA position in the DMCC. Expected result: the DMCC does not send any message to a local RCC, nor to USMCC, nor an NOCR to FMCC. -->
+		            
+        <Test25EltDt>8E39BD700346633D5B8D8F05958ECD</Test25EltDt>
+		<Location25>-466/+25.506/+050.914</Location25>
+		
+		       <!-- Test 13.1  --> 
+				  
+        <!-- Overview: test the DMCC capability to generate a confirmed FGB cancellation message, if and only if, the required sequence (3 cancellation messages within 110 seconds, with no intervening non-cancellation message) is met.
+
+        1) Send a SIT 145 message to the DMCC for an USA coded ELT(DT) with a non-cancellation beacon message, DOA position in the DMCC and no encoded position. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position, an NOCR to the UMCC and an alert to the LADR. -->
+		            
+        <Test26EltDt>96E92AF03BDFEFFABB7664041D3A83</Test26EltDt>
+		<Location26>-466/+25.256/+051.678</Location26>
+		
+		       <!-- Test 13.2  --> 
+				  
+        <!-- 2) Send a SIT 145 message with two solutions to the DMCC with the same data as in message 1, except that each beacon message indicates cancellation, the Latitude (MF 25) is +0.01 degrees in solution 1 and +0.02 degrees in solution 2, and the Time of Last Burst (MF 14b) is +5 seconds in solution 1 and +10 seconds in solution 2. Expected result: for each solution, the DMCC sends a SIT 185 Position Update Alert to a local RCC with DOA position, and an alert to the LADR for both alert. The SIT 185 shall not include the mention MANUAL for the activation Type, as not provided in previous nor current message. -->
+		            
+        <Test271EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test271EltDt>
+		<Location271>-466/+25.266/+051.678</Location271>
+		<Test272EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test272EltDt>
+		<Location272>-466/+25.276/+051.678</Location272>
+		
+		        <!-- Test 13.3  --> 
+				  
+        <!-- 3) Send a SIT 145 message to the DMCC with a non-cancellation beacon message, with the same data as in solution 1 of message 2, except that the Time of Last Burst (MF 14b) is +20 seconds vs the reference time of that solution. Expected result: the DMCC sends a SIT 185 Position update Alert with DOA position to a local RCC and sends an alert to the LADR. -->
+		<Test28EltDt>96E92AF03BDFEFFABB7664041D3A83</Test28EltDt>		
+		<Location28>-466/+25.266/+051.678</Location28>
+		
+		        <!-- Test 13.4  --> 
+				  
+        <!-- 3) Send a SIT 145 message to the DMCC with a cancellation beacon message, with the same data as in solution 1 of message 2, except that the Time of Last Burst (MF 14b) is +100 seconds (within the 110 second threshold for cancellation) and the DOA position is in Pakistan. Expected result: the DMCC sends a SIT 185 Position Update Alert to a local RCC with DOA position, a SIT 145 message to the PAMCC, and an alert to the LADR. -->
+		<Test29EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test29EltDt>
+		<Location29>-466/+25.266/+051.678</Location29>
+		
+		         <!-- Test 14.1 --> 
+				  
+        <!-- Overview: test the DMCC capability to generate a confirmed FGB cancellation message, if and only if, the required sequence (3 cancellation messages within 110 seconds, with no intervening non-cancellation message) is met.
+		
+		. 1) Send a SIT 145 message to the DMCC for a USA coded ELT(DT) with a non-cancellation beacon message and DOA position in the DMCC. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position, an NOCR to an USMCC and an alert to the LADR. -->
+		<Test30EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test30EltDt>
+		<Location30>-466/+25.525/+051.534</Location30>
+		
+		        <!-- Test 14.2 --> 
+				  
+        <!-- 2) Send a SIT 145 message with two solutions to the DMCC with the same data as in message 1, except that each beacon message indicates cancellation, the Latitude (MF 25) is +0.01 degrees in solution 1 and +0.02 degrees in solution 2, and the Time of Last Burst (MF 14b) is +10 seconds in solution 1 and +20 seconds in solution 2. Expected result: for each solution, the DMCC sends a SIT 185 Initial Located Alert to a local RCC with DOA position, and an alert to the LADR. -->
+		<Test311EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test311EltDt>
+		<Location311>-466/+25.535/+051.534</Location311>
+		<Test312EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test312EltDt>
+		<Location312>-466/+25.545/+051.534</Location312>
+		
+		         <!-- Test 14.3 --> 
+				  
+        <!-- Send a SIT 145 message to the DMCC with the same data as in solution 1 of message 2, except that the Time of Last Burst (MF 14b) is +112 seconds (outside the 110 second threshold for cancellation). Expected result: the DMCC does not send a message to a local RCC, but sends only an alert to the LADR. -->
+		<Test32EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test32EltDt>
+		<Location32>-466/+25.535/+051.534</Location32>
+		
+		        <!-- Test 14.4 --> 
+				  
+        <!-- end a SIT 145 message to the DMCC with the same data as in solution 2 of message 2, except that the Time of Last Burst (MF 14b) is +108 seconds and is +6 seconds from the time in message 3 (within the 110 second threshold for cancellation, for 3 separate bursts). Expected result: the DMCC sends a SIT 185 User Cancellation Alert to a local RCC with DOA position and an alert to the LADR. -->
+		
+		<Test33EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test33EltDt>
+		<Location33>-466/+25.535/+051.534</Location33>
+		
+		        <!-- Test 14.5 --> 
+				  
+        <!-- Send a SIT 145 message to the DMCC with the same data as in message 1 (with a non-cancellation beacon message), except that the Time of Last Burst (MF 14b) is 5 seconds prior to time of the first burst used to confirm cancellation. Expected result: the DMCC filters the Alert as the cancellation has been confirmed. No message expected for the RCC nor for the LADR. -->
+		
+		<Test34EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test34EltDt>
+		<Location34>-466/+25.935/+051.534</Location34>
+		
+		        <!-- Test 14.6 --> 
+				  
+        <!-- Send a SIT 145 message to the DMCC with the same data as in message 1 (with a non-cancellation beacon message), except that the Time of Last Burst (MF 14b) is 10 seconds before the latest detect time used to confirm the most recent cancellation, and DOA position in conflict with previous DOA location but still in the DMCC. Expected result: the DMCC shall treat the alert as a new beacon activation, and sends a SIT 185 Initial Located Alert to a local RCC with DOA position, an NOCR to the USMCC and an alert to the LADR.-->
+		
+		<Test35EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test35EltDt>
+		<Location35>-466/+26.335/+051.934</Location35>
+		
+		        <!-- Test 14.7 --> 
+				  
+        <!-- Note: run this test only if the DMCC does not send an alert for the previous test. Send a SIT 145 message to the DMCC with the same data as in message 1 (with a non-cancellation beacon message), except that the Time of Last Burst (MF 14b) is 5 seconds after the time of the latest burst available to confirm cancellation, and DOA position in the DMCC (but in “conflict” with the previous DOA position). Expected result: the DMCC treats the alert as a new beacon activation, and sends a SIT 185 Initial Located Alert to a local RCC with DOA position, a SIT 137 (NOCR) message to the USMCC and an alert to the LADR. -->
+		
+		<Test36EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test36EltDt>
+		<Location36>-466/+26.435/+051.944</Location36>
+		
+		        <!-- Test 15.1 --> 
+				  
+        <!-- Verify the DMCC compliance with the A.001 section 3.12 requirement to retroactively send an alert with refined encoded position and no 3LD to the LADR once the 3LD is available in a subsequent alert.
+
+        Message 1
+        Send a SIT 142 message to the DMCC for a Mexican coded ELT(DT) with a 24 Bit Address and refined encoded position in the DMCC (+59.3/+60.85) in the satellite footprint. Expected result: the DMCC sends a SIT 185 Initial Located Alert to a local RCC, a SIT 136 (NOCR) message to the USMCC and no message to the LADR (since there is no 3LD). -->
+		
+		<Test37EltDt>959932B448C683271EB69F58090665</Test37EltDt>
+		
+		        <!-- Test 15.2 --> 
+				  
+        <!-- Message 2
+        Send a SIT 142 message to the DMCC for the same ELT(DT) with an encoded 3LD in PDF-2 and coarse encoded position in the DMCC (+59/+60) within the satellite footprint, and a reference time (time of last burst) of +5 seconds. Expected result: the DMCC sends a SIT 185 Position Update alert to a local RCC, a SIT 142 message to the USMCC (optionally), and two messages to the LADR with the 3LD (the first alert with refined encoded position and the 2d alert with coarse encoded position). -->
+		
+		<Test38EltDt>959932B448C683271EB68F01E17C9F</Test38EltDt>
+		
+		        <!-- Test 16 -->
+				
+				<!--Send SIT 122 -->
+				
+		<Test39EltDt>8E0900000046433DBEA1080428DC85</Test39EltDt>
+		<Test40EltDt>8E0900000046433DBEA107780B0CDB</Test40EltDt>
+		<Test41EltDt>8E0900000046433408D9C60428D0AB</Test41EltDt>
+		<Test42EltDt>8E0900000046433408D9C57609020A</Test42EltDt>				
+		<Test43EltDt>8E0900000046433408D9C40428DC6F</Test43EltDt>
+		<Test44EltDt>8E0900000046433408D9C37608050B</Test44EltDt>
+		<Test45EltDt>8E0900000046433408D9C20428DC1A</Test45EltDt>		
+		<Test46EltDt>8E0900000046433408D9C174070EAE</Test46EltDt>
+		<Test47EltDt>8E0900000046433408D9C00428D0DE</Test47EltDt>
+		<Test48EltDt>8E0900000046433408D9C00428D0DE</Test48EltDt>
+		
+				<!-- Test 17 -->
+				
+				<!--Send SIT 122 -->
+		
+		<Test49EltDt>8E8900000046433D9B8048040CB956</Test49EltDt>		
+		<Test50EltDt>8E8900000046433D9B8047780B0CDB</Test50EltDt>		
+		<Test51EltDt>8E890000004643342DF886040CB578</Test51EltDt>		
+		<Test52EltDt>8E890000004643342DF8857609020A</Test52EltDt>		
+		<Test53EltDt>8E890000004643342DF884040CB9BC</Test53EltDt>
+		
+				<!-- Test 18 -->
+				
+				<!--Send SIT 145 -->
+		
+		<!--Message 1-->
+		<Test54EltDt>96E932B448DFEFFEA5859F18090D61</Test54EltDt>
+		<Location54>-470/+25.225/+051.270</Location54>
+		
+		<!--Message 2-->
+		<Test55EltDt>93C9018830BF5FD09547CF1E0F01EE</Test55EltDt>
+		<Location55>-470/+25.240/+051.236</Location55>
+		
+				<!-- Test 19 -->
+				
+				<!--Send SIT 145 -->
+				
+		<Test56EltDt>959932B448C6633BCEFD8F04578981</Test56EltDt>
+		<Location56>-466/+25.355/+051.687</Location56>
+
+				
+				
+		
+		
+		
+    </TestParameters>
+</Config>
