@@ -1,0 +1,7 @@
+/00016 00000/#LocalMccGeolut1Code#/#TestTime#29
+/322/#LocalMccCode#/222/01
+/#LocalMccGeolut1Code#/+99999.9 999.9 +99.99/#TestTime#00 34.00/01
+/#Test2-1-2#
+/0/#TestID2-1-2#
+/LASSIT
+/ENDMSG

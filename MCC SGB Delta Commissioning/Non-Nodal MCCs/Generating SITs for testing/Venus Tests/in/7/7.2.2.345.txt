@@ -1,0 +1,12 @@
+/00063 00000/#LocalMccMeolut1Code#/#ActualTestTime#01
+/345/#LocalMccCode#/01
+/#LocalMccMeolut1Code#/+24984.0 999.9 +00.00/#ActualTestTime#00 00.28/#ActualTestTime#00 35.30/01
+/#Test7-2-2#
+/0/#TestID7-2-2#
+/#Location7-2-2#/992/002.60
+/34.00/00/05/00.150000/00/005/087 000.7 000.3
+/314 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/#LocalMccMeolut1Code#02 #LocalMccMeolut1Code#03 #LocalMccMeolut1Code#04 #LocalMccMeolut1Code#05 #LocalMccMeolut1Code#06 000000 000000 000000 000000
+000000 000000 000000 000000 000000 000000 000000 000000
+/LASSIT
+/ENDMSG

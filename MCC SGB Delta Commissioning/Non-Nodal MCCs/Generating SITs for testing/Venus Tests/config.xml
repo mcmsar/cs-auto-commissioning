@@ -1,0 +1,498 @@
+<!--
+  This configuration file allows specific options to be set for this test suite. Any equivalent options set by the user
+  in the Venus application itself will be overridden if they are specified in this file.
+-->
+<Config>
+	<!-- The type of test environment for which this test suite is designed. Options: -->
+	<!-- TsiLocal: This test suite can interact with the TSi MCC database and insar directory structure in order to do -->
+    <!--   more complex and complete tests. -->
+    <!-- Local: This test suite will be run on the same local system as the software under test. Database and other -->
+    <!--   software-specific options will be disabled. -->
+    <TestEnvironment>Local</TestEnvironment>
+
+	<!-- Time in seconds to delay between every individual test step. -->
+	<!-- Enough time should be allotted so that all expected outputs will be received before the delay has completed. -->
+    <!-- If a delay is specified directly in a test step, that delay will override this setting. -->
+	<DelayBetweenStepsSeconds>1</DelayBetweenStepsSeconds>
+
+	<!-- Time in seconds to delay at the very end of the test. -->
+	<!-- Time at the end of a test may be needed for all processing or final tasks to complete. -->
+	<DelayAtEndOfTestSeconds>1</DelayAtEndOfTestSeconds>
+
+	<!-- The directory to dropoff input files to the application under test. -->
+	<InputMessageDirectory>C:\insar\ftp\</InputMessageDirectory>
+
+	<!-- The directory to pickup output files from the application under test. -->
+	<OutputMessageDirectory>C:\insar\lan_out\</OutputMessageDirectory>
+
+
+    <!-- The list of available satellites for use in any test where the detecting satellite parameter needs to be selected -->
+    <!-- in order to be in or out of footprint. GEO satellites are not supported here and should instead be provided in TestParameters. -->
+    <!-- By default, Venus will download TLEs and match them to the configured satellite with the same NORAD number, however, -->
+    <!-- the TLE may also be manually specified instead. -->
+    <!-- All satellites here must also be configured in the MCC under test, or else the MCC may reject messages due to an unknown -->
+    <!-- satellite. Remove or comment-out any satellites that will not be accepted at the MCC when the test is run. -->
+
+    <!-- Attributes that must be included are: -->
+    <!--     Type: "LEO" or "MEO" -->
+    <!--     SarsatId: The C/S number for a given satellite, e.g.: 7, 114, 302 -->
+    <!--     NoradNumber: The NORAD identifying number for a given satellite as will be found in a TLE, e.g.: 25338 -->
+    <!-- Optional attributes: -->
+    <!--     MinElevation: The minimum elevation between the satellite and location to be considered within its footprint; default -5.0 -->
+    <!-- Optionally, a value may be provided in TLE form for any satellite, including LEO. If set, Venus will use that instead of any -->
+    <!-- TLE downloaded from the TLE source URL. Only lines 1 and 2 of the TLE should be included, e.g.: -->
+    <!--     <Satellite Type="LEO" SarsatId="7" NoradNumber="25338" MinElevation="-5.0"> -->
+    <!--         1 25338U 98030A   24098.81789746  .00000212  00000+0  10560-3 0  9993 -->
+    <!--         2 25338  98.5762 127.3938 0010740 164.4996 195.6515 14.26529187347409 -->
+    <!--     </Satellite> -->
+
+    <!-- See below for information on how to use these satellites in test steps. -->
+    <Satellites>
+        <TleSourceUrl>https://celestrak.org/NORAD/elements/sarsat.txt</TleSourceUrl>
+
+        <Satellite Type="LEO" SarsatId="7" NoradNumber="25338" MinElevation="-5.0"/>
+        <Satellite Type="LEO" SarsatId="10" NoradNumber="28654"/>
+        <Satellite Type="LEO" SarsatId="12" NoradNumber="33591"/>
+        <Satellite Type="LEO" SarsatId="13" NoradNumber="38771"/>
+        <Satellite Type="LEO" SarsatId="114" NoradNumber="44387"/>
+
+        <Satellite Type="MEO" SarsatId="302" NoradNumber="28474"/>
+        <Satellite Type="MEO" SarsatId="303" NoradNumber="40294"/>
+        <Satellite Type="MEO" SarsatId="306" NoradNumber="39741"/>
+        <Satellite Type="MEO" SarsatId="308" NoradNumber="40730"/>
+        <Satellite Type="MEO" SarsatId="309" NoradNumber="40105"/>
+        <Satellite Type="MEO" SarsatId="310" NoradNumber="41019"/>
+        <Satellite Type="MEO" SarsatId="312" NoradNumber="29601"/>
+        <Satellite Type="MEO" SarsatId="315" NoradNumber="32260"/>
+        <Satellite Type="MEO" SarsatId="316" NoradNumber="27663"/>
+        <Satellite Type="MEO" SarsatId="317" NoradNumber="28874"/>
+        <Satellite Type="MEO" SarsatId="318" NoradNumber="26690"/>
+        <Satellite Type="MEO" SarsatId="319" NoradNumber="28190"/>
+        <Satellite Type="MEO" SarsatId="323" NoradNumber="28361"/>
+        <Satellite Type="MEO" SarsatId="324" NoradNumber="38833"/>
+        <Satellite Type="MEO" SarsatId="326" NoradNumber="40534"/>
+        <Satellite Type="MEO" SarsatId="327" NoradNumber="39166"/>
+        <Satellite Type="MEO" SarsatId="329" NoradNumber="32384"/>
+        <Satellite Type="MEO" SarsatId="330" NoradNumber="39533"/>
+        <Satellite Type="MEO" SarsatId="332" NoradNumber="41328"/>
+        <Satellite Type="MEO" SarsatId="402" NoradNumber="41549"/>
+        <Satellite Type="MEO" SarsatId="403" NoradNumber="41860"/>
+        <Satellite Type="MEO" SarsatId="404" NoradNumber="41861"/>
+        <Satellite Type="MEO" SarsatId="405" NoradNumber="41862"/>
+        <Satellite Type="MEO" SarsatId="407" NoradNumber="41859"/>
+        <Satellite Type="MEO" SarsatId="408" NoradNumber="41175"/>
+        <Satellite Type="MEO" SarsatId="409" NoradNumber="41174"/>
+        <Satellite Type="MEO" SarsatId="413" NoradNumber="43567"/>
+        <Satellite Type="MEO" SarsatId="415" NoradNumber="43564"/>
+        <Satellite Type="MEO" SarsatId="419" NoradNumber="38857"/>
+        <Satellite Type="MEO" SarsatId="421" NoradNumber="43055"/>
+        <Satellite Type="MEO" SarsatId="424" NoradNumber="40889"/>
+        <Satellite Type="MEO" SarsatId="425" NoradNumber="43056"/>
+        <Satellite Type="MEO" SarsatId="426" NoradNumber="40544"/>
+        <Satellite Type="MEO" SarsatId="427" NoradNumber="43057"/>
+        <Satellite Type="MEO" SarsatId="430" NoradNumber="40890"/>
+        <Satellite Type="MEO" SarsatId="431" NoradNumber="43058"/>
+        <Satellite Type="MEO" SarsatId="433" NoradNumber="43565"/>
+        <Satellite Type="MEO" SarsatId="436" NoradNumber="43566"/>
+    </Satellites>
+
+
+    <!-- TestParameters defines a list parameters that will be replaced in input SIT messages with specified values. -->
+    <!-- The parameter name must be surrounded by '#' symbols in the message. -->
+    <!-- Whitespace before and after the specified value in this config file will be removed. -->
+
+    <!-- The parameter "#CurrentSitDateTimeMinuteAccuracy#" is predefined and will be replaced with the current -->
+    <!-- system time in UTC in SIT format "YY DDD HHMM". Offsets to this time can be specified by adding parentheses -->
+    <!-- at the end of the parameter name with one or more integer offset sizes followed by a 'y', 'd', 'h', or 'm'. -->
+    <!-- Examples: -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(1y2d3h4m)# will offset the current time by +1 year, +2 days, +3 hours, -->
+    <!--    and +4 minutes. -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(+1d)# will offset the current time by +1 day. -->
+    <!-- #CurrentSitDateTimeMinuteAccuracy(-1h+15m)# will offset the current time by -1 hour and +15 minutes. -->
+
+    <!-- The parameters "#LeoSatelliteInView#", "#MeoSatelliteInView#", "#LeoSatelliteNotInView#", and -->
+    <!-- "#MeoSatelliteNotInView#" are predefined and will be replaced with the three-digit satellite number -->
+    <!-- of the defined type that has the nth-highest elevation, or lowest for NotInView, relative to the location -->
+    <!-- being observed. -->
+    <!-- Each of these parameters take the following arguments (any optional can be omitted, but order does matter): -->
+    <!--     Location being observed (required); format is "([+-]DD.DDD/[+-]DDD.DDD)"; sign can be omitted, precision does not have to be exact -->
+    <!--         Example: (+30.000/-070.000) -->
+    <!--         Example: (1.20/0.0000005) -->
+    <!--     Time of observation (optional); default is current time; format is SIT format with or without seconds -->
+    <!--         Example: (24 100 2227) -->
+    <!--         Example: (24 100 2227 12.34) -->
+    <!--     Satellite ranking (optional); default is 1; format is the integer value indicating the nth-best or nth-worst satellite -->
+    <!--         Example: (1) -->
+    <!--         Example: (15) -->
+    <!-- The satellite in/out-of view parameters will be replaced last, so CurrentSitDateTime or any user-defined test parameter -->
+    <!-- can be embedded into the satellite parameter and will be include. -->
+    <!-- Example: #LeoSatelliteInView(20.0/-19.5)# -->
+    <!-- Example: #LeoSatelliteNotInView(#LocalLocationTest1#)# -->
+    <!-- Example: #MeoSatelliteInView(#LocalLocationTest1#)(#DetectTimeTest1Step1#)# -->
+    <!-- Example: #MeoSatelliteNotInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)# -->
+    <!-- Example: #MeoSatelliteInView(#LocalLocationTest1#)(#CurrentSitDateTimeMinuteAccuracy(-1h-9m)#)#(2) -->
+    <!-- Example test message: -->
+    <!--     /00001 00000/#NodalMccDdr1Code#/#CurrentSitDateTimeMinuteAccuracy# -->
+    <!--     /142/#LocalMccCode#/01 -->
+    <!--     /#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitDateTimeMinuteAccuracy(-6m)# 12.30 -->
+    <!--     /#CurrentSitDateTimeMinuteAccuracy(-1m)# 12.31/07/FFFE2F#Test1Epirb1# -->
+    <!--     /12.99/00/01/002 -->
+    <!--     /#MeoSatelliteInView(#LocalLocation#)# #MeoSatelliteInView(#LocalLocation#)(2)# #MeoSatelliteInView(#LocalLocation#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!--     /LASSIT -->
+    <!--     /ENDMSG -->
+
+
+    <!-- Example: -->
+    <!-- <TestParameters> -->
+    <!--     <LocalMccCode>3660</LocalMccCode> -->
+    <!--     <LocalMeolutCode>3669</LocalMeolutCode> -->
+    <!--     <LocalFgb1> -->
+    <!--         D6E30F3C0618618C46EAEFE0FF0146 -->
+    <!--     </LocalFgb1> -->
+    <!--     <Location1>+38.948/-076.831</Location1> -->
+    <!-- <TestParameters> -->
+
+    <!-- Example input file: -->
+    <!-- /00001 00000/#LocalMeolutCode#/#CurrentSitDateTimeMinuteAccuracy# -->
+    <!-- /145/#LocalMccCode#/01 -->
+    <!-- /#LocalMeolutCode#/+14968.0 999.9 +00.00/#CurrentSitDateTimeMinuteAccuracy(-5m)# 48.48 -->
+    <!-- /#CurrentSitDateTimeMinuteAccuracy(-3m)# 48.89/03/FFFE2F#LocalFgb1# -->
+    <!-- /-366/#Location1#/872/010.00 -->
+    <!-- /38.50/00/00/00.000000/00/005/018 012.2 003.6 -->
+    <!-- /#MeoSatelliteInView(#Location1#)# #MeoSatelliteInView(#Location1#)(2)# #MeoSatelliteInView(#Location1#)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!-- /LASSIT -->
+    <!-- /ENDMSG -->
+
+    <!-- Resulting file to be passed on to the application under test: -->
+    <!-- /00001 00000/3669/23 268 2007 -->
+    <!-- /145/3660/01 -->
+    <!-- /3669/+14968.0 999.9 +00.00/23 268 2002 48.48 -->
+    <!-- /23 268 2004 48.89/03/FFFE2FD6E30F3C0618618C46EAEFE0FF0146 -->
+    <!-- /-366/+38.948/-076.831/872/010.00 -->
+    <!-- /38.50/00/00/00.000000/00/005/018 012.2 003.6 -->
+    <!-- /329 315 302 000 000 000 000 000 000 000 000 000 000 000 000 000 000 -->
+    <!-- /LASSIT -->
+    <!-- /ENDMSG -->
+    <TestParameters>
+        <LocalMccCode>4770</LocalMccCode>
+        <LocalMccGeolut1Code>4775</LocalMccGeolut1Code>
+        <LocalMccMeolut1Code>4773</LocalMccMeolut1Code>
+        <LocalMccMeolut2Code>4774</LocalMccMeolut2Code>
+	<LocalMccLeolut1Code>4771</LocalMccLeolut1Code>
+		
+		
+	<NodalMccDdr1Code>4310</NodalMccDdr1Code>
+        <NodalMccGeolut1Code>4312</NodalMccGeolut1Code>
+        <NodalMccMeolut1Code>4314</NodalMccMeolut1Code>
+	<NodalMccLeolut1Code>4311</NodalMccLeolut1Code>
+		
+		
+        <!-- added by JLO, test 7 uses ActualTestTime, all other tests use TestTime -->
+        <TestTime>24 203 19</TestTime>
+        <ActualTestTime>24 204 03</ActualTestTime>
+        <ActualTestTime-1>24 204 02</ActualTestTime-1>
+      	
+        <!-- Test 1 --> 
+        <Test1-1-1>09C440014F3089F1B39E24E7C5953ACA0503FFF00C000059800</Test1-1-1>
+        <TestID1-1-1>A7949C440013E2CA9D65028</TestID1-1-1>
+  		
+ 	<!-- Test 2 --> 
+        <Test1-1-2>09C440014F34F00004600007C5953ACA0503FFF00C000059800</Test1-1-2>
+        <TestID1-1-2>A7949C440013E2CA9D65028</TestID1-1-2>
+ 		
+ 	<!-- Test 3 --> 
+        <Test1-1-3>09C440014F30891EC3A76877C5953ACA0503FFF00C000059800</Test1-1-3>
+        <TestID1-1-3>A7949C440013E2CA9D65028</TestID1-1-3>
+
+	<!-- Test 4 --> 
+        <Test1-1-4>09C440014F33F83E07FFC1F7C5953ACA0503FFF00C000059800</Test1-1-4>
+        <TestID1-1-4>A7949C440013E2CA9D65028</TestID1-1-4>
+        <Location1-1-4>-477/+18.620/+115.810</Location1-1-4>	
+
+	<!-- Test 5 --> 
+        <Test1-1-5>09C440014F3094FDF39E8937C5953ACA0503FFF00C000059800</Test1-1-5>
+        <TestID1-1-5>A7949C440013E2CA9D65028</TestID1-1-5>
+ 
+	<!-- Test 6 --> 
+        <Test1-2-1>09C440014F33F83E07FFC1F000000000000BFFF003FFFFFFE70</Test1-2-1>
+        <TestID1-2-1>A7949C44001000000000000</TestID1-2-1>
+ 
+	<!-- Test 7 --> 
+        <Test1-2-2>09C440014F3091F1B39E24E000000000000BFFF003FFFFFFE70</Test1-2-2>
+        <TestID1-2-2>A7949C44001000000000000</TestID1-2-2>
+  	
+	<!-- Test 8 --> 
+        <Test1-2-3>09C440014F34F0000460000000000000000BFFF003FFFFFFE70</Test1-2-3>
+        <TestID1-2-3>A7949C44001000000000000</TestID1-2-3>
+ 
+	<!-- Test 9 --> 
+        <Test1-2-4>09C440014F34F8000460000000000000000BFFF003FFFFFFE70</Test1-2-4>
+        <TestID1-2-4>A7949C44001000000000000</TestID1-2-4>
+ 
+	<!-- Test 10 -->
+	<!-- same beacon data as Test 6, 1-2-1 -->
+        <Test1-2-5>09C440014F33F83E07FFC1F000000000000BFFF003FFFFFFE70</Test1-2-5>
+        <TestID1-2-5>A7949C44001000000000000</TestID1-2-5>
+        <Location1-2-5>-477/+17.246/+114.761</Location1-2-5>	
+
+	<!-- Test 11 --> 
+        <Test1-2-6>09C440014F308999A39599A000000000000BFFF220200000000</Test1-2-6>
+        <TestID1-2-6>A7949C44001000000000000</TestID1-2-6>
+ 
+	<!-- Test 12 --> 
+        <Test1-2-7>09C440014F23F83E07FFC1F000000000000BFFF220300000000</Test1-2-7>
+        <TestID1-2-7>A7949C44001000000000000</TestID1-2-7>
+        <Location1-2-7>-477/+17.200/+114.800</Location1-2-7>	
+
+	<!-- Test 13 -->    	
+        <Test1-3-1>09C4400A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-1>
+        <TestID1-3-1>BBB49C4400A5C4DC015FFFF</TestID1-3-1>
+
+	<!-- Test 14 -->
+	<!-- same beacon data as Test 13, 1-3-1 -->
+        <Test1-3-2>09C4400A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-2>
+        <TestID1-3-2>BBB49C4400A5C4DC015FFFF</TestID1-3-2>
+
+	<!-- Test 15 --> 
+        <Test2-1-1>09C543DB566089EB839E14880000C9DC1843FFF100007FE2600</Test2-1-1>
+        <TestID2-1-1>AB349C543DB4000064EE0C2</TestID2-1-1>
+ 
+	<!-- Test 16 --> 
+        <Test2-1-2>09C543DB566089EB839E14880000C9DC1803FFF100007FE2600</Test2-1-2>
+        <TestID2-1-2>AB349C543DB4000064EE0C0</TestID2-1-2>
+
+	<!-- Test 17 --> 
+        <Location2-2>-477/+17.123/+115.123</Location2-2>
+
+	<!-- Test 18 --> 
+        <Location2-3>-477/+17.123/+115.123</Location2-3>
+
+	<!-- Test 19 --> 
+        <Location2-4>-477/+17.123/+115.123</Location2-4>
+
+	<!-- Test 20 --> 
+        <Location2-5>-477/+17.123/+115.123</Location2-5>
+
+	<!-- Test 21 --> 
+        <Location2-6>-477/+17.123/+115.123</Location2-6>
+
+	<!-- Test 22 --> 
+        <Location2-7>-477/+17.123/+115.123</Location2-7>
+
+	<!-- Test 23 --> 
+        <Test2-8>09C4407B4F208A66639E6664EB281524921FFFF003FFFFFFE70</Test2-8>
+        <TestID2-8>A7949C4407B275940A92490</TestID2-8>
+  
+	<!-- Test 24 --> 
+        <Location2-9>-477/+17.123/+115.123</Location2-9>
+
+	<!-- Test 25 --> 
+        <Location2-10>-477/+17.123/+115.123</Location2-10>
+
+	<!-- Test 26 --> 
+        <Location2-11>-477/+17.123/+115.123</Location2-11>
+
+	<!-- Test 27 --> 
+        <Location2-12-1>-477/+17.123/+115.123</Location2-12-1>
+
+	<!-- Test 28 --> 
+        <Location2-12-2>-477/+17.134/+115.134</Location2-12-2>
+
+	<!-- Test 29 --> 
+        <Location2-13>-477/+17.123/+115.123</Location2-13>
+
+	<!-- Test 30 --> 
+        <Location2-14-1>-477/+17.123/+115.123</Location2-14-1>
+
+	<!-- Test 31 --> 
+        <Location2-14-2>-477/+17.123/+115.123</Location2-14-2>
+
+	<!-- Test 32 --> 
+        <Location2-15>-477/+17.123/+115.123</Location2-15>
+
+	<!-- Test 33 --> 
+        <Location2-16>-477/+17.123/+115.123</Location2-16>
+
+	<!-- Test 34 --> 
+        <Location2-17>-477/+17.123/+115.123</Location2-17>
+
+	<!-- Test 35 --> 
+        <Location2-18>-477/+17.123/+115.123</Location2-18>
+
+	<!-- Test 36 --> 
+        <Test2-19>09C4C0014F208800039800080000CB89B80FFFF1000060E3A00</Test2-19>
+        <TestID2-19>A7949C4C0014000065C4DC0</TestID2-19>
+
+	<!-- Test 37 --> 
+        <Location3-1-1>-477/+17.123/+115.123</Location3-1-1>
+
+	<!-- Test 38 --> 
+        <Location3-1-2>-477/+17.123/+115.123</Location3-1-2>
+
+	<!-- Test 39 --> 
+        <Location3-1-3>-477/+17.123/+115.123</Location3-1-3>
+
+	<!-- Test 40 --> 
+        <Location3-2-1>-477/+17.123/+115.123</Location3-2-1>
+
+	<!-- Test 41 --> 
+        <Location3-2-2>-477/+17.123/+115.123</Location3-2-2>
+
+	<!-- Test 42 --> 
+        <Location3-3-1>-477/+17.123/+115.123</Location3-3-1>
+
+	<!-- Test 43 --> 
+        <Location3-3-2>-477/+17.123/+115.123</Location3-3-2>
+
+	<!-- Test 44 --> 
+        <Location3-3-3>-477/+17.123/+115.123</Location3-3-3>
+
+	<!-- Test 45 --> 
+        <Location3-3-4>-477/+17.123/+115.123</Location3-3-4>
+
+	<!-- Test 46 --> 
+        <Location3-4-1>-477/+17.123/+115.123</Location3-4-1>
+
+	<!-- Test 47 --> 
+        <Location3-4-2>-477/+17.123/+115.123</Location3-4-2>
+
+	<!-- Test 48 --> 
+        <Location3-4-3>-477/+17.123/+115.123</Location3-4-3>
+
+	<!-- Test 49 --> 
+        <Location3-4-4>-477/+17.123/+115.123</Location3-4-4>
+
+	<!-- Test 50 --> 
+        <Location3-4-5>-477/+17.123/+115.123</Location3-4-5>
+
+	<!-- Test 51 --> 
+        <Location4-1-1>-477/+17.123/+115.123</Location4-1-1>
+
+	<!-- Test 52 --> 
+        <Location4-1-2>-477/+17.123/+115.123</Location4-1-2>
+
+	<!-- Test 53 --> 
+        <Location5-1>-477/+17.123/+115.123</Location5-1>
+
+	<!-- Test 54 --> 
+        <Test7-1-1>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-1>
+        <TestID7-1-1>A7949C5C0015E1B1FFFFFFF</TestID7-1-1>
+
+	<!-- Test 55 --> 
+        <Test7-1-2>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-2>
+        <TestID7-1-2>A7949C5C0015E1B1FFFFFFF</TestID7-1-2>
+
+	<!-- Test 56 --> 
+	<!-- same beacon data as Test 54, 7-1-1 -->
+        <Test7-1-3>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-3>
+        <TestID7-1-3>A7949C5C0015E1B1FFFFFFF</TestID7-1-3>
+
+	<!-- Test 57 --> 
+	<!-- same beacon data as Test 54, 7-1-1 -->
+        <Test7-1-4>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-4>
+        <TestID7-1-4>A7949C5C0015E1B1FFFFFFF</TestID7-1-4>
+
+ 	<!-- Test 58 -->
+	<!-- same beacon data as Test 55, 7-1-2 -->
+        <Test7-1-5>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-5>
+        <TestID7-1-5>A7949C5C0015E1B1FFFFFFF</TestID7-1-5>
+
+ 	<!-- Test 59 -->
+	<!-- same beacon data as Test 55, 7-1-2 -->
+        <Test7-1-6>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-6>
+        <TestID7-1-6>A7949C5C0015E1B1FFFFFFF</TestID7-1-6>
+
+<!-- 7-1-7 eliminated -->
+
+	<!-- Test 60 --> 
+	<!-- same beacon data as Test 55, 7-1-2 -->
+        <Test7-1-8>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-8>
+        <TestID7-1-8>A7949C5C0015E1B1FFFFFFF</TestID7-1-8>
+        <Location7-1-8>-477/+17.300/+115.500</Location7-1-8>
+      
+	<!-- Test 61 --> 
+	<!-- same beacon data as Test 55, 7-1-2 -->
+        <Test7-1-9>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-9>
+        <TestID7-1-9>A7949C5C0015E1B1FFFFFFF</TestID7-1-9>
+        <Location7-1-9>-477/+16.548/+115.761</Location7-1-9>
+
+	<!-- Test 62 --> 
+        <Test7-2-1>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-1>
+        <TestID7-2-1>ADD49C680014E1B1FFBD620</TestID7-2-1>
+        <Location7-2-1>-477/+17.300/+114.800</Location7-2-1>
+
+	<!-- Test 63 --> 
+	<!-- same beacon data as Test 62, 7-2-1 -->
+        <Test7-2-2>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-2>
+        <TestID7-2-2>ADD49C680014E1B1FFBD620</TestID7-2-2>
+        <Location7-2-2>-477/+17.300/+114.800</Location7-2-2>
+  
+ 	<!-- Test 64 --> 
+	<!-- same beacon data as Test 62, 7-2-1 Note that DOA location is different (fixed in template) -->
+        <Test7-2-3>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-3>
+        <TestID7-2-3>ADD49C680014E1B1FFBD620</TestID7-2-3>
+   
+ 	<!-- Test 65 --> 
+	<!-- same beacon data and location as Test 62, 7-2-1 -->
+        <Test7-2-4>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-4>
+        <TestID7-2-4>ADD49C680014E1B1FFBD620</TestID7-2-4>
+        <Location7-2-4>-477/+17.300/+114.800</Location7-2-4>
+
+ 	<!-- Test 66 --> 
+        <Test7-2-5>09C680015BA3F83E07FFC1F9C363FF7AC40FFFF100007FE2600</Test7-2-5>
+        <TestID7-2-5>ADD49C680014E1B1FFBD620</TestID7-2-5>
+        <Location7-2-5>-477/+17.300/+114.800</Location7-2-5>
+
+ 	<!-- Test 67 --> 
+        <Test9-1>09C440014F308A66639E6667C5953ACA0503FFF00FFFFFFFE70</Test9-1>
+        <TestID9-1>A7949C440013E2CA9D65028</TestID9-1>
+
+ 	<!-- Test 68 --> 
+        <Test9-2>09C5C00156608A66639E6667CF1782AB8603FFF003FFFFFFE70</Test9-2>
+        <TestID9-2>AB349C5C0013E78BC155C30</TestID9-2>
+
+	<!-- Test 69 --> 
+        <Location10-1>-477/+17.123/+115.123</Location10-1>
+
+	<!-- Test 70 --> 
+        <Location10-2>-477/+17.123/+115.123</Location10-2>
+
+	<!-- Test 71 -->
+        <!-- no parameters -->
+
+	<!-- Test 72 --> 
+        <Location10-4a>-477/+17.123/+115.123</Location10-4a>
+        <Location10-4b>-477/+17.123/+116.123</Location10-4b>
+
+	<!-- Test 73 --> 
+        <Location10-5>-477/+17.123/+115.123</Location10-5>
+
+	<!-- Test 74 --> 
+        <Location10-6>-477/+17.123/+115.123</Location10-6>
+
+	<!-- Test 75 --> 
+        <Location11-1>-477/+17.123/+115.123</Location11-1>
+
+	<!-- Test 76 --> 
+        <Location11-2>-477/+17.456/+115.456</Location11-2>
+
+<!-- 12-1 not conducted -->
+
+<!-- 12-2 not conducted -->
+
+	<!-- Test 77 -->
+        <Test12-3-1>09C4C00B77643D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-1>
+        <TestID12-3-1>BBB49C4C00B000000000000</TestID12-3-1>
+
+	<!-- Test 78 -->
+	<!-- same beacon data as Test 77, 12-3-1 -->
+        <Test12-3-2>09C4C00B77643D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-2>
+        <TestID12-3-2>BBB49C4C00B000000000000</TestID12-3-2>
+
+	<!-- Test 79 -->
+        <Test12-4>09C4C00A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test12-4>
+        <TestID12-4>BBB49C4C00A5C4DC015FFFF</TestID12-4>
+
+		
+    </TestParameters>
+</Config>

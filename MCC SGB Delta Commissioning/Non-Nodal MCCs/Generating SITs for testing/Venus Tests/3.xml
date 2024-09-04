@@ -1,0 +1,28 @@
+<test name="3" config="Generic">
+  <inputs>
+    <sit>in\3\3.1.1.345.txt</sit>
+    <sit>in\3\3.1.2.345.txt</sit> 
+    <sit>in\3\3.1.3.345.txt</sit> 
+    <sit>in\3\3.2.1.345.txt</sit> 
+    <sit>in\3\3.2.2.345.txt</sit> 
+    <sit>in\3\3.3.1.345.txt</sit> 
+    <sit>in\3\3.3.2.345.txt</sit> 
+    <sit>in\3\3.3.3.345.txt</sit> 
+    <sit>in\3\3.3.4.345.txt</sit> 
+    <sit>in\3\3.4.1.345.txt</sit> 
+    <sit>in\3\3.4.2.345.txt</sit> 
+    <sit>in\3\3.4.3.345.txt</sit> 
+    <sit>in\3\3.4.4.345.txt</sit> 
+    <sit>in\3\3.4.5.345.txt</sit> 
+  </inputs>
+  <outputs>
+  </outputs>
+</test>
+
+
+
+
+
+
+
+

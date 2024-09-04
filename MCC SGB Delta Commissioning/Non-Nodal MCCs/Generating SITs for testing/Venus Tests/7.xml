@@ -1,0 +1,28 @@
+<test name="7" config="Generic">
+  <inputs>
+    <sit>in\7\7.1.1.322.txt</sit>
+    <sit>in\7\7.1.2.322.txt</sit> 
+    <sit>in\7\7.1.3.322.txt</sit> 
+    <sit>in\7\7.1.4.322.txt</sit> 
+    <sit>in\7\7.1.5.322.txt</sit> 
+    <sit>in\7\7.1.6.322.txt</sit> 
+ <!-- eliminated   <sit>in\7\7.1.7.322.txt</sit> -->
+    <sit>in\7\7.1.8.345.txt</sit> 
+    <sit>in\7\7.1.9.345.txt</sit> 
+    <sit>in\7\7.2.1.345.txt</sit>
+    <sit>in\7\7.2.2.345.txt</sit>
+    <sit>in\7\7.2.3.345.txt</sit>
+    <sit>in\7\7.2.4.345.txt</sit>
+    <sit>in\7\7.2.5.345.txt</sit>
+  </inputs>
+  <outputs>
+  </outputs>
+</test>
+
+
+
+
+
+
+
+

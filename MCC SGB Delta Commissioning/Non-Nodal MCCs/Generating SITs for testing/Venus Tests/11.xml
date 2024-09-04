@@ -1,0 +1,15 @@
+<test name="11" config="Generic">
+  <inputs>
+    <sit>in\11\11.1.345.txt</sit> 
+    <sit>in\11\11.2.345.txt</sit>
+  </inputs>
+  <outputs>
+  </outputs>
+</test>
+
+
+
+
+
+
+
