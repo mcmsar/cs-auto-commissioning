@@ -14,34 +14,34 @@ A parent directory should be maintained for each category of tests, e.g., MCC LG
 
 + MCC LGM Commissioning
   + Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table LGM Nodal
+    + Venus Tests LGM Nodal
   + Non-Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table LGM Non-Nodal
+    + Venus Tests LGM Non-Nodal
   + Non-Nodal CDDR MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table LGM Non-Nodal CDDR
+    + Venus Tests LGM Non-Nodal CDDR
 + MCC FGB ELT(DT) Delta Commissioning
   + Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table FGB ELT(DT) Nodal
+    + Venus Tests FGB ELT(DT) Nodal
   + Non-Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table FGB ELT(DT) Non-Nodal
+    + Venus Tests FGB ELT(DT) Non-Nodal
   + Non-Nodal CDDR MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table FGB ELT(DT) Non-Nodal CDDR
+    + Venus Tests FGB ELT(DT) Non-Nodal CDDR
 + MCC SGB Delta Commissioning
   + Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table SGB Nodal
+    + Venus Tests SGB Nodal
   + Non-Nodal MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table SGB Non-Nodal
+    + Venus Tests SGB Non-Nodal
   + Non-Nodal CDDR MCCs
-    + Test Table
-    + Venus Tests
+    + Test Table SGB Non-Nodal CDDR
+    + Venus Tests SGB Non-Nodal CDDR
 
 A Venus test suite consists of a general config.xml file, a series of XML files in the format <test number>.xml that define the individual tests, and an "in", "out", and "expected" directory with each containing individual subdirectories for each test. Example:
 
