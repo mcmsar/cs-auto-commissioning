@@ -1,8 +1,0 @@
-/00021 00000/#LocalMccMeolut1Code#/#CurrentSitTimeTest11# 0900
-/142/#LocalMccCode#/01
-/#LocalMccMeolut1Code#/+99999.9 999.9 +99.99/#CurrentSitTimeTest11# 0900 05.16
-/#CurrentSitTimeTest11# 0901 05.17/01/FFFE2F#Test11EltDt#
-/36.20/00/03/003
-/407 426 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000
-/LASSIT
-/ENDMSG

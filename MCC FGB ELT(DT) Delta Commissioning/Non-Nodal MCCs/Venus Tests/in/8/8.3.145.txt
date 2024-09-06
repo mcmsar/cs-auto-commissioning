@@ -1,9 +1,0 @@
-/00010 00000/#LocalMccMeolut1Code#/#CurrentSitDateTimeMinuteAccuracy#
-/145/#LocalMccCode#/01
-/#LocalMccMeolut1Code#/+14968.0 999.9 +00.00/#CurrentSitDateTimeMinuteAccuracy(-5m)# 48.48
-/#CurrentSitDateTimeMinuteAccuracy(-3m)# 48.89/03/FFFE2F#Test10EltDt#
-/#Location10#/872/010.00
-/38.50/00/00/00.000000/00/005/018 012.2 003.6
-/407 426 408 000 000 000 000 000 000 000 000 000 000 000 000 000 000
-/LASSIT
-/ENDMSG
