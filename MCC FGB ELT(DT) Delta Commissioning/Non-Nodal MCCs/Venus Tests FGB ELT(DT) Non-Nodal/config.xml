@@ -192,156 +192,170 @@
          <ActualTestTime>24 256 06</ActualTestTime>
       	
         <!-- Test 1.1 --> 
-        <!-- constant --> <Test1EltDt>8C99C000001FEFFC8F62C00626EF80</Test1EltDt>
-	<Location1>-412/+40.104/+116.209</Location1>
+        <!-- constant --> <EltDt1.1>8C99C000001FEFFC8F62C00626EF80</EltDt1.1>
+	<Location1.1>-412/+40.104/+116.209</Location1.1>
 		
 	<!-- Test 2.1 --> 
-        <!-- constant --> <Test2EltDt>8C998000001FEFFD2FB5B00626EC28</Test2EltDt>
-	<Location2>-412/+40.104/+116.209</Location2>
+        <!-- constant --> <EltDt2.1>8C998000001FEFFD2FB5B00626EC28</EltDt2.1>
+	<Location2.1>-412/+40.104/+116.209</Location2.1>
 		
 	<!-- Test 3.1 --> 
-        <!-- constant --> <Test3EltDt>8C998000005FEFFDA627800E26E47C</Test3EltDt>
-	<Location3>-412/+40.104/+116.209</Location3>
+        <!-- constant --> <EltDt3.1>8C998000005FEFFDA627800E26E47C</EltDt3.1>
+	<Location3.1>-412/+40.104/+116.209</Location3.1>
 		
 	<!-- Test 4.1 --> 
-        <!-- constant --> <Test4EltDt>8E097137005FEFFF9AD84F0630948D</Test4EltDt>
-	<Location4>-412/+40.104/+116.209</Location4>
+        <!-- constant --> <EltDt4.1>8E097137005FEFFF9AD84F0630948D</EltDt4.1>
+	<Location4.1>-412/+40.104/+116.209</Location4.1>
 		
 	<!-- Test 5.1 -->
-	<Test5EltDt>99D98011F548C873AC4A400452A622</Test5EltDt>
-	<!-- constant --> <Location5.1>+503/-18.000/+132.000</Location5.1>
-	<!-- constant --> <Location5.2>+563/+01.388/+103.801</Location5.2>
+	<EltDt5.1>99D98011F548C873AC4A400452A622</EltDt5.1>
+	<!-- constant --> <Location5.1A>+503/-18.000/+132.000</Location5.1A>
+	<!-- constant --> <Location5.1B>+563/+01.388/+103.801</Location5.1B>
 		
 	<!-- Test 6.1 --> 
-        <!-- constant --> <Test6EltDt>8C9908D08906633DF4684F0613324C</Test6EltDt>
-	<Location6>-412/+40.104/+116.209</Location6>
+        <!-- constant --> <EltDt6.1>8C9908D08906633DF4684F0613324C</EltDt6.1>
+	<Location6.1>-412/+40.104/+116.209</Location6.1>
+	<!-- constant --> <EncodedLocation6.1>25.5/51.5</EncodedLocation6.1>
 		
 	<!-- Test 7.1 --> <!-- not applicable -->
 		
-	<!-- Test 8-1 -->  
-    	<!-- constant --> <Test8EltDt>8ED9BFFFFFDFEFF995A08F05AD6D70</Test8EltDt>
-	<!-- constant --> <Location8>-366/+38.000/-080.300</Location8>
+	<!-- Test 8-1 -->
+    	<!-- constant --> <EltDt8.1>8ED9BFFFFFDFEFF995A08F05AD6D70</EltDt8.1>
+	<!-- constant --> <Location8.1>-366/+38.000/-080.300</Location8.1>
 				   
 	<!-- Test 8-2 --> 
-        <!-- constant --> <Test9EltDt>8F798000001FEFFFA2158F05AD6D70</Test9EltDt>
-	<!-- constant --> <Location9>-366/+38.000/-080.300</Location9>
+        <!-- constant --> <EltDt8.2>8F798000001FEFFFA2158F05AD6D70</EltDt8.2>
+	<!-- constant --> <Location8.2>-366/+38.000/-080.300</Location8.2>
 		
 	<!-- Test 8-3 --> 
-        <!-- constant --> <Test10EltDt>9019BFFFFF9FEFFABB0C0F05AD6D70</Test10EltDt>
-	<!-- constant --> <Location10>-366/+38.000/-080.300</Location10>
-		
-	<!-- Test 9.1 --> 
-        <Test11EltDt>9DD981520D5FEFF9C8F5000452A622</Test11EltDt>
+        <!-- constant --> <EltDt8.3>9019BFFFFF9FEFFABB0C0F05AD6D70</EltDt8.3>
+	<!-- constant --> <Location8.3>-366/+38.000/-080.300</Location8.3>
+
+ 	<!-- Test 9.1 --> 
+        <EltDt9.1>9DD981520D5FEFF9C8F5000452A622</EltDt9.1>
 				
 	<!-- Test 9.2 --> 
-        <Test12EltDt>9DD981520D4A0740050FC00452A622</Test12EltDt>
-		  
+        <EltDt9.2>9DD981520D4A0740050FC00452A622</EltDt9.2>
+        <EncodedLocation9.2>40.0/116.0</EncodedLocation9.2>
+          
 	!-- Test 9.3 --> 
-        <Test13EltDt>9DD981520D4A0740050FC00452A622</Test13EltDt>  <!-- same as test 9.2 -->
-	<Location13>-574/+20.160/+106.120</Location13> 		
+        <EltDt9.3>9DD981520D4A0740050FC00452A622</EltDt9.3>  <!-- same as test 9.2 -->
+	<Location9.3>-574/+20.160/+106.120</Location9.3> 		
+        <EncodedLocation9.3>40.0/116.0</EncodedLocation9.3> <!-- same as test 9.2 -->
 
         <!-- Test 9.4 --> 
-        <Test14EltDt>9DD981520D4A0740050FC00452A622</Test14EltDt> <!-- same as test 9.2 -->
-	<Location14>-412/+40.001/+116.001</Location14>
+        <EltDt9.4>9DD981520D4A0740050FC00452A622</EltDt9.4> <!-- same as test 9.2 -->
+	<Location9.4>-412/+40.001/+116.001</Location9.4>
+        <EncodedLocation9.4>40.0/116.0</EncodedLocation9.4> <!-- same as test 9.2 -->
 
         <!-- Test 9.5 -->           
-        <Test15EltDt>9DD981520D4A0740050FC00452A622</Test15EltDt> <!-- same as test 9.2 -->
-	<Location15>-412/+40.001/+116.001</Location15>	<!-- same as test 9.4 -->
+        <EltDt9.5>9DD981520D4A0740050FC00452A622</EltDt9.5> <!-- same as test 9.2 -->
+	<Location9.5>-412/+40.001/+116.001</Location9.5>	<!-- same as test 9.4 -->
+        <EncodedLocation9.5>40.0/116.0</EncodedLocation9.5> <!-- same as test 9.2 -->
 		
       	<!-- Test 9.6 --> 
-        <Test16EltDt>9DD981520D4A0740050FC00452A622</Test16EltDt> <!-- same as test 9.2 -->
-	<Location16>-412/+40.001/+116.001</Location16>
+        <EltDt9.6>9DD981520D4A0740050FC00452A622</EltDt9.6> <!-- same as test 9.2 -->
+	<Location9.6>-412/+40.001/+116.001</Location9.6>
+        <EncodedLocation9.6>40.0/116.0</EncodedLocation9.6> <!-- same as test 9.2 -->
 		
 	!-- Test 9.7 --> 
-        <Test17EltDt>9DD981520D4A0740050FC00452A622</Test17EltDt> <!-- same as test 9.2 -->
-	<Location17>-416/+22.031/+120.421</Location17>
+        <EltDt9.7>9DD981520D4A0740050FC00452A622</EltDt9.7> <!-- same as test 9.2 -->
+	<Location9.7>-416/+22.031/+120.421</Location9.7>
+        <EncodedLocation9.7>40.0/116.0</EncodedLocation9.7> <!-- same as test 9.2 -->
 
         <!-- Test 9.8 --> 
-        <Test18EltDt>9DD981520D5FEFF9C8F5000452A622</Test18EltDt> <!-- same as test 9.1 -->
-	<Location18>-416/+22.032/+120.422</Location18>		
+        <EltDt9.8>9DD981520D5FEFF9C8F5000452A622</EltDt9.8> <!-- same as test 9.1 -->
+	<Location9.8>-416/+22.032/+120.422</Location9.8>		
 		
      	<!-- Test 9.9 --> 		            
-        <Test19EltDt>9DD981520D4A075369FE400452A622</Test19EltDt>
-     		
+        <EltDt9.9>9DD981520D4A075369FE400452A622</EltDt9.9>
+        <EncodedLocation9.9>40.0/117.0</EncodedLocation9.9>
+   		
 	<!-- Test 10.1 -->       
-        <Test21EltDt>99C900048D0908013558900452ABAD</Test21EltDt>
-		
+        <EltDt10.1>99C900048D0908013558900452ABAD</EltDt10.1>
+	<EncodedLocation10.1>36.0/128.0</EncodedLocation10.1>
+	
 	<!-- Test 10.2 --> 	            
         <!-- not applicable -->
 		
 	<!-- Test 11.1 --> 	      	            
-        <!-- constant --> <Test23EltDt>9599BFFFFFDFEFFB74F7CF01E17C9F</Test23EltDt>
-	<Location23>-440/+37.000/+126.000</Location23>
+        <!-- constant --> <EltDt11.1>9599BFFFFFDFEFFB74F7CF01E17C9F</EltDt11.1>
+	<Location11.1>-440/+37.000/+126.000</Location11.1>
 		
 	<!-- Test 11.2 --> 
-        <!-- constant --> <Test24EltDt>95998000001FEFFB93CB0FE1F0FC30</Test24EltDt>
-	<Location24>-440/+37.000/+126.000</Location24>
+        <!-- constant --> <EltDt11.2>95998000001FEFFB93CB0FE1F0FC30</EltDt11.2>
+	<Location11.2>-440/+37.000/+126.000</Location11.2>
 		
 	<!-- Test 12.1  --> 
-        <!-- constant --> <Test25EltDt>8E39BD70034D36C8A6C30F05958ECD</Test25EltDt>
-	<Location25>-412/+40.000/+116.000</Location25>
+        <!-- constant --> <EltDt12.1>8E39BD70034D36C8A6C30F05958ECD</EltDt12.1>
+	<Location12.1>-412/+40.000/+116.000</Location12.1>
+	<!-- constant --> <EncodedLocation12.1>52.5/-108.5</EncodedLocation12.1>
 		
 	<!-- Test 13.1  --> 
-        <!-- constant --> <Test26EltDt>96E92AF03BDFEFFABB7664041D3A83</Test26EltDt>
-	<Location26>-412/+40.104/+116.209</Location26>
+        <!-- constant --> <EltDt13.1>96E92AF03BDFEFFABB7664041D3A83</EltDt13.1>
+	<Location13.1>-412/+40.104/+116.209</Location13.1>
 		
 	<!-- Test 13.2  --> 
-        <!-- constant --> <Test271EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test271EltDt>
-	<Location271>-412/+40.114/+116.209</Location271>
-	<!-- constant --> <Test272EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test272EltDt>
-	<Location272>-412/+40.124/+116.209</Location272>
+        <!-- constant --> <EltDt13.2A>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.2A>
+	<Location13.2A>-412/+40.114/+116.209</Location13.2A>
+	<!-- constant --> <EltDt13.2B>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.2B>
+	<Location13.2B>-412/+40.124/+116.209</Location13.2B>
 		
 	<!-- Test 13.3  --> 
-	<!-- constant --> <Test28EltDt>96E92AF03BDFEFFABB7664041D3A83</Test28EltDt>		
-	<Location28>-412/+40.114/+116.209</Location28> <!-- Same as 13.2.1 -->
+	<!-- constant --> <EltDt13.3>96E92AF03BDFEFFABB7664041D3A83</EltDt13.3>		
+	<Location13.3>-412/+40.114/+116.209</Location13.3> <!-- Same as 13.2.1 -->
 		
 	<!-- Test 13.4  --> 
-	<!-- constant --> <Test29EltDt>96E92AF03BFF5FD06FCE8F1E0F01EE</Test29EltDt>
-	<Location29>-440/+37.160/+126.120</Location29>
+	<!-- constant --> <EltDt13.4>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.4>
+	<Location13.4>-440/+37.160/+126.120</Location13.4>
 		
 	<!-- Test 14.1 --> 
-	<!-- constant --> <Test30EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test30EltDt>
-	<Location30>-412/+40.104/+116.209</Location30>
+	<!-- constant --> <EltDt14.1>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.1>
+	<Location14.1>-412/+40.104/+116.209</Location14.1>
 		
 	<!-- Test 14.2 --> 
-	<!-- constant --> <Test311EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test311EltDt>
-	<Location311>-412/+40.114/+116.209</Location311>
-	<!-- constant --> <Test312EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test312EltDt>
-	<Location312>-412/+40.124/+116.209</Location312>
+	<!-- constant --> <EltDt14.2A>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.2A>
+	<Location14.2A>-412/+40.114/+116.209</Location14.2A>
+	<!-- constant --> <EltDt14.2B>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.2B>
+	<Location14.2B>-412/+40.124/+116.209</Location14.2B>
 		
 	<!-- Test 14.3 --> 
-	<!-- constant --> <Test32EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test32EltDt>
-	<Location32>-412/+40.114/+116.209</Location32> <!-- same as 14.2.1 -->
+	<!-- constant --> <EltDt14.3>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.3>
+	<Location14.3>-412/+40.114/+116.209</Location14.3> <!-- same as 14.2.1 -->
 		
 	<!-- Test 14.4 --> 
-	<!-- constant --> <Test33EltDt>96E92AF007FF5FD76FFA0F1E0F01EE</Test33EltDt>
-	<Location33>-412/+40.124/+116.209</Location33> <!-- same as 14.2.2 -->
+	<!-- constant --> <EltDt14.4>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.4>
+	<Location14.4>-412/+40.124/+116.209</Location14.4> <!-- same as 14.2.2 -->
 		
 	<!-- Test 14.5 --> 
-	<!-- constant --> <Test34EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test34EltDt>
-	<Location34>-412/+40.104/+116.209</Location34> <!-- same as 14.1 -->
+	<!-- constant --> <EltDt14.5>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.5>
+	<Location14.5>-412/+40.104/+116.209</Location14.5> <!-- same as 14.1 -->
 	
 	<!-- Test 14.6 --> 
-	<!-- constant --> <Test35EltDt>96E92AF007DFEFFDBB42CF0452AC6E</Test35EltDt>
-	<Location35>-412/+40.104/+116.209</Location35> <!-- same as 14.1 -->
+	<!-- constant --> <EltDt14.6>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.6>
+	<Location14.6>-412/+40.104/+116.209</Location14.6> <!-- same as 14.1 -->
 
 	<!-- Test 14.7 --> <!-- not applicable -->
 		
 	<!-- Test 15.1 --> 
-	<Test37EltDt>9DD90AB50E4A0742325F00F4185351</Test37EltDt>
+	<EltDt15.1>9DD90AB50E4A0742325F00F4185351</EltDt15.1>
+	<EncodedLocation15.1>40.167/116.139</EncodedLocation15.1>
 		
 	<!-- Test 15.2 --> 
-	<Test38EltDt>9DD90AB50E4A0742325F00039D876B</Test38EltDt>
+	<EltDt15.2>9DD90AB50E4A0742325F00039D876B</EltDt15.2>
+	<EncodedLocation15.2>40.0/116.0</EncodedLocation15.2>
 		
 	<!-- Test 16.1 -->
-	<Test39EltDt>9B890AB50D4A07427351C0039D876B</Test39EltDt>
+	<EltDt16.1>9B890AB50D4A07427351C0039D876B</EltDt16.1>
+	<EncodedLocation16.1>40.0/116.0</EncodedLocation16.1>
 
 	<!-- Test 16.2 -->
-	<Test40EltDt>9B890AB50D4A07427351C0F4185351</Test40EltDt>
+	<EltDt16.2>9B890AB50D4A07427351C0F4185351</EltDt16.2>
+	<EncodedLocation16.2>40.167/116.139</EncodedLocation16.2>
 
 	<!-- Test 16.3 -->
-	<!-- constant --> <Test41EltDt>8F798020031FEFF978CECF04578981</Test41EltDt>
-        <Location41>-412/+41.104/+114.209</Location41>
+	<!-- constant --> <EltDt16.3>8F798020031FEFF978CECF04578981</EltDt16.3>
+        <Location16.3>-412/+41.104/+114.209</Location16.3>
 
 
     </TestParameters>

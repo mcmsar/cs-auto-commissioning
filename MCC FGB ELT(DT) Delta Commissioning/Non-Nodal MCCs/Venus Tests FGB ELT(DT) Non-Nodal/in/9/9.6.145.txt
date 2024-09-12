@@ -1,9 +1,9 @@
 /00016 00000/#LocalMccMeolut1Code#/#ActualTestTime#01
 /145/#LocalMccCode#/01
 /#LocalMccMeolut1Code#/+14968.0 999.9 +00.00/#ActualTestTime#00 05.16
-/#ActualTestTime#00 36.17/02/FFFE2F#Test16EltDt#
-/#Location16#/872/010.00
+/#ActualTestTime#00 36.17/02/FFFE2F#EltDt9.6#
+/#Location9.6#/872/010.00
 /38.50/00/00/00.000000/00/005/018 012.2 003.6
-/407 426 408 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/#MeoSatelliteInView(#EncodedLocation9.6#)(#ActualTestTime#00)(1)# #MeoSatelliteInView(#EncodedLocation9.6#)(#ActualTestTime#00)(2)# #MeoSatelliteInView(#EncodedLocation9.6#)(#ActualTestTime#00)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000
 /LASSIT
 /ENDMSG

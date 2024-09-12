@@ -1,7 +1,7 @@
 /00022 00000/#LocalMccMeolut1Code#/#TestTime#01
 /142/#LocalMccCode#/01
 /#LocalMccMeolut1Code#/+99999.9 999.9 +99.99/#TestTime#01 10.16
-/#TestTime#02 10.17/01/FFFE2F#Test22EltDt#
+/#TestTime#02 10.17/01/FFFE2F#EltDt10.2#
 /12.99/00/01/002
 /407 426 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000
 /LASSIT
