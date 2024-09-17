@@ -1,5 +1,5 @@
 /00003 00000/#LocalMccGeolut1Code#/#TestTime#40
-/324/#LocalMccCode#/222/01
+/324/#LocalMccCode#/#LocalGeoSat#/01
 /#LocalMccGeolut1Code#/+99999.9 999.9 +99.99/#TestTime#10 34.00/01
 /#Test1-1-3#
 /0/#TestID1-1-3#

@@ -174,8 +174,9 @@
     <!-- /LASSIT -->
     <!-- /ENDMSG -->
     <TestParameters>
-        <LocalMccCode>41200</LocalMccCode>
+        <LocalMccCode>412</LocalMccCode>
         <LocalMccGeolut1Code>4125</LocalMccGeolut1Code>
+	<LocalGeoSat>222</LocalGeoSat>
         <LocalMccMeolut1Code>4123</LocalMccMeolut1Code>
         <LocalMccMeolut2Code>4124</LocalMccMeolut2Code>
 	<LocalMccLeolut1Code>4121</LocalMccLeolut1Code>
@@ -188,9 +189,9 @@
 		
 		
         <!-- added by JLO, test 7 uses ActualTestTime, all other tests use TestTime -->
-        <TestTime>24 256 19</TestTime>
-        <ActualTestTime>24 256 03</ActualTestTime>
-        <ActualTestTime-1>24 256 02</ActualTestTime-1>
+        <TestTime>24 203 19</TestTime>
+        <ActualTestTime>24 204 03</ActualTestTime>
+        <ActualTestTime-1>24 204 02</ActualTestTime-1>
       	
         <!-- Test 1 --> 
         <Test1-1-1>09C440014F3141F1B3A624E7C5953ACA0503FFF003FFFFFFE70</Test1-1-1>
