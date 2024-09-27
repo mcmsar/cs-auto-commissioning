@@ -188,8 +188,8 @@
 		
 		
          <!-- added by JLO, test 9 uses ActualTestTime -->
-         <TestTime>24 256 03</TestTime>
-         <ActualTestTime>24 256 06</ActualTestTime>
+         <TestTime>24 263 03</TestTime>
+         <ActualTestTime>24 263 06</ActualTestTime>
       	
         <!-- Test 1.1 --> 
         <!-- constant --> <EltDt1.1>8C99C000001FEFFC8F62C00626EF80</EltDt1.1>

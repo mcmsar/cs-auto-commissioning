@@ -1,6 +1,6 @@
 /00012 00000/#LocalMccMeolut1Code#/#TestTime#07
 /339/#LocalMccCode#/01
-/#LocalMccMeolut1Code#/+24984.0 999.9 +00.00/#TestTime#03 00.28/#TestTime#06 00.30/01
+/#LocalMccMeolut1Code#/+24984.0 999.9 +00.00/#TestTime#03 00.28/#TestTime#06 35.17/01
 /#Test1-2-7#
 /0/#TestID1-2-7#
 /#Location1-2-7#/992/002.60

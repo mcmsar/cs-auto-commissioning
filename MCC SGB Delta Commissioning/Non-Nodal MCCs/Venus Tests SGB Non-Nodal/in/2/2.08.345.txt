@@ -3,7 +3,7 @@
 /#LocalMccMeolut1Code#/+24984.0 999.9 +00.00/#TestTime#03 00.28/#TestTime#03 00.30/01
 /#Test2-8#
 /0/#TestID2-8#
-/-503/+21.400/-099.300/992/002.60
+/-345/+21.400/-099.300/992/002.60
 /34.00/00/05/00.150000/00/005/087 000.7 000.3
 /#MeoSatelliteInView(#EncodedLocation2-8#)(#TestTime#03)(1)# #MeoSatelliteInView(#EncodedLocation2-8#)(#TestTime#03)(2)# #MeoSatelliteInView(#EncodedLocation2-8#)(#TestTime#03)(3)# #MeoSatelliteInView(#EncodedLocation2-8#)(#TestTime#03)(4)# #MeoSatelliteInView(#EncodedLocation2-8#)(#TestTime#03)(5)# 000 000 000 000 000 000 000 000 000 000 000 000
 /#LocalMccMeolut1Code#02 #LocalMccMeolut1Code#03 #LocalMccMeolut1Code#04 #LocalMccMeolut1Code#05 #LocalMccMeolut1Code#06 000000 000000 000000 000000
