@@ -4,6 +4,6 @@
 /#TestTime#07 48.89/03/FFFE2F#EltDt2.1#
 /#Location2.1#/872/010.00
 /38.50/00/00/00.000000/00/005/018 012.2 003.6
-/407 426 408 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/#MeoSatelliteInView(#EncodedLocation2.1#)(#TestTime#05)(1)# #MeoSatelliteInView(#EncodedLocation2.1#)(#TestTime#05)(2)# #MeoSatelliteInView(#EncodedLocation2.1#)(#TestTime#05)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000
 /LASSIT
 /ENDMSG

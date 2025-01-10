@@ -1,0 +1,17 @@
+﻿<test name="see config xml file for more details ... " description="See previous comment " config="Generic">
+  <inputs>
+        <sit>in\17\17.1.142.txt</sit> <!-- I3 MEO -->
+	<sit>in\17\17.2.142.txt</sit> <!-- I3 MEO -->
+	<sit>in\17\17.3.142.txt</sit> <!-- I3 MEO -->	
+  </inputs>
+  <outputs>
+  </outputs>
+</test>
+
+
+
+
+
+
+
+

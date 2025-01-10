@@ -53,7 +53,7 @@
         <Satellite Type="LEO" SarsatId="7" NoradNumber="25338" MinElevation="-5.0"/>
         <Satellite Type="LEO" SarsatId="10" NoradNumber="28654"/>
         <Satellite Type="LEO" SarsatId="12" NoradNumber="33591"/>
-        <Satellite Type="LEO" SarsatId="13" NoradNumber="38771"/>
+        <!--Satellite Type="LEO" SarsatId="13" NoradNumber="38771"/-->
         <Satellite Type="LEO" SarsatId="114" NoradNumber="44387"/>
 
         <Satellite Type="MEO" SarsatId="302" NoradNumber="28474"/>
@@ -174,56 +174,52 @@
     <!-- /LASSIT -->
     <!-- /ENDMSG -->
     <TestParameters>
-        <LocalMccCode>4770</LocalMccCode>
-        <LocalMccGeolut1Code>4775</LocalMccGeolut1Code>
+        <LocalMccCode>4160</LocalMccCode>
+        <LocalMccGeolut1Code>4168</LocalMccGeolut1Code>
 	<LocalGeoSat>222</LocalGeoSat>
-        <LocalMccMeolut1Code>4773</LocalMccMeolut1Code>
-        <LocalMccMeolut2Code>4774</LocalMccMeolut2Code>
-	<LocalMccLeolut1Code>4771</LocalMccLeolut1Code>
-		
+        <LocalMccMeolut1Code>4166</LocalMccMeolut1Code>
+        <LocalMccMeolut2Code>4167</LocalMccMeolut2Code>
+			
 		
 	<NodalMccDdr1Code>4310</NodalMccDdr1Code>
-        <NodalMccGeolut1Code>4312</NodalMccGeolut1Code>
-        <NodalMccMeolut1Code>4314</NodalMccMeolut1Code>
-	<NodalMccLeolut1Code>4311</NodalMccLeolut1Code>
+	
 		
-		
-        <!-- added by JLO, test 7 uses ActualTestTime, all other tests use TestTime -->
-        <TestTime>24 203 19</TestTime>
-        <ActualTestTime>24 204 03</ActualTestTime>
-        <ActualTestTime-1>24 204 02</ActualTestTime-1>
+        <!-- test 7 uses ActualTestTime, all other tests use TestTime -->
+        <TestTime>25 001 19</TestTime>
+        <ActualTestTime>25 001 03</ActualTestTime>
+        <ActualTestTime-1>25 001 02</ActualTestTime-1>
       	
         <!-- Test 1 --> 
-        <Test1-1-1>09C440014F3089F1B39E24E7C5953ACA0503FFF00C000059800</Test1-1-1>
+        <Test1-1-1>09C440014F30B9F1B3C624E7C5953ACA0503FFF003FFFFFFE70</Test1-1-1>
         <TestID1-1-1>A7949C440013E2CA9D65028</TestID1-1-1>
   		
  	<!-- Test 2 --> 
-        <Test1-1-2>09C440014F34F00004600007C5953ACA0503FFF00C000059800</Test1-1-2>
+        <Test1-1-2>09C440014F34F00004600007C5953ACA0503FFF003FFFFFFE70</Test1-1-2>
         <TestID1-1-2>A7949C440013E2CA9D65028</TestID1-1-2>
  		
  	<!-- Test 3 --> 
-        <Test1-1-3>09C440014F30891EC3A76877C5953ACA0503FFF00C000059800</Test1-1-3>
+        <Test1-1-3>09C440014F30C11EC3C76877C5953ACA0503FFF003FFFFFFE70</Test1-1-3>
         <TestID1-1-3>A7949C440013E2CA9D65028</TestID1-1-3>
 
 	<!-- Test 4 --> 
-        <Test1-1-4>09C440014F33F83E07FFC1F7C5953ACA0503FFF00C000059800</Test1-1-4>
+        <Test1-1-4>09C440014F33F83E07FFC1F7C5953ACA0503FFF003FFFFFFE70</Test1-1-4>
         <TestID1-1-4>A7949C440013E2CA9D65028</TestID1-1-4>
-        <Location1-1-4>-477/+18.620/+115.810</Location1-1-4>	
+        <Location1-1-4>-416/+23.620/+120.810</Location1-1-4>	
 
 	<!-- Test 5 --> 
-        <Test1-1-5>09C440014F3094FDF39E8937C5953ACA0503FFF00C000059800</Test1-1-5>
+        <Test1-1-5>09C440014F30BCFDF3CE8937C5953ACA0503FFF003FFFFFFE70</Test1-1-5>
         <TestID1-1-5>A7949C440013E2CA9D65028</TestID1-1-5>
  
 	<!-- Test 6 --> 
         <Test1-2-1>09C440014F33F83E07FFC1F000000000000BFFF003FFFFFFE70</Test1-2-1>
         <TestID1-2-1>A7949C44001000000000000</TestID1-2-1>
 <!-- 1-2-1 does not have an encoded location but must use the same satellite as test 1-2-2 -->
-	<EncodedLocation1-2-1>18.24301/115.76801</EncodedLocation1-2-1>
+	<EncodedLocation1-2-1>23.24301/120.76801</EncodedLocation1-2-1>
  
 	<!-- Test 7 --> 
-        <Test1-2-2>09C440014F3091F1B39E24E000000000000BFFF003FFFFFFE70</Test1-2-2>
+        <Test1-2-2>09C440014F30B9F1B3C624E000000000000BFFF003FFFFFFE70</Test1-2-2>
         <TestID1-2-2>A7949C44001000000000000</TestID1-2-2>
-	<EncodedLocation1-2-2>18.24301/115.76801</EncodedLocation1-2-2>
+	<EncodedLocation1-2-2>23.24301/120.76801</EncodedLocation1-2-2>
   	
 	<!-- Test 8 --> 
         <Test1-2-3>09C440014F34F0000460000000000000000BFFF003FFFFFFE70</Test1-2-3>
@@ -239,279 +235,280 @@
 	<!-- same beacon data as Test 6, 1-2-1 -->
         <Test1-2-5>09C440014F33F83E07FFC1F000000000000BFFF003FFFFFFE70</Test1-2-5>
         <TestID1-2-5>A7949C44001000000000000</TestID1-2-5>
-        <Location1-2-5>-477/+17.246/+114.761</Location1-2-5>	
+        <Location1-2-5>-416/+24.246/+120.761</Location1-2-5>	
 
 	<!-- Test 11 --> 
-        <Test1-2-6>09C440014F308999A39599A000000000000BFFF220200000000</Test1-2-6>
+        <Test1-2-6>09C440014F30C199A3C599A000000000000BFFF22327FFFF800</Test1-2-6>
         <TestID1-2-6>A7949C44001000000000000</TestID1-2-6>
- 	<EncodedLocation1-2-6>17.20001/114.70001</EncodedLocation1-2-6>
+	<EncodedLocation1-2-6>24.20001/120.70001</EncodedLocation1-2-6>
  
 	<!-- Test 12 --> 
-        <Test1-2-7>09C440014F23F83E07FFC1F000000000000BFFF220300000000</Test1-2-7>
+        <Test1-2-7>09C440014F33F83E07FFC1F000000000000BFFF22337FFFF800</Test1-2-7>
         <TestID1-2-7>A7949C44001000000000000</TestID1-2-7>
-        <Location1-2-7>-477/+17.200/+114.800</Location1-2-7>	
+        <Location1-2-7>-416/+24.200/+120.800</Location1-2-7>	
 
 	<!-- Test 13 -->    	
-        <Test1-3-1>09C4400A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-1>
-        <TestID1-3-1>BBB49C4400A5C4DC015FFFF</TestID1-3-1>
+        <Test1-3-1>09C4800A6823F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-1>
+        <TestID1-3-1>B4149C4800A5C4DC015FFFF</TestID1-3-1>
 
 	<!-- Test 14 -->
 	<!-- same beacon data as Test 13, 1-3-1 -->
-        <Test1-3-2>09C4400A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-2>
-        <TestID1-3-2>BBB49C4400A5C4DC015FFFF</TestID1-3-2>
+        <Test1-3-2>09C4800A6823F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test1-3-2>
+        <TestID1-3-2>B4149C4800A5C4DC015FFFF</TestID1-3-2>
 
 	<!-- Test 15 --> 
-        <Test2-1-1>09C543DB566089EB839E14880000C9DC1843FFF100007FE2600</Test2-1-1>
+        <Test2-1-1>09C543DB5660B9EB83C614880000C9DC184FFFF100007FE2600</Test2-1-1>
         <TestID2-1-1>AB349C543DB4000064EE0C2</TestID2-1-1>
  
 	<!-- Test 16 --> 
-        <Test2-1-2>09C543DB566089EB839E14880000C9DC1803FFF100007FE2600</Test2-1-2>
+        <Test2-1-2>09C543DB5660B9EB83C614880000C9DC180FFFF100007FE2600</Test2-1-2>
         <TestID2-1-2>AB349C543DB4000064EE0C0</TestID2-1-2>
 
 	<!-- Test 17 --> 
-        <Location2-2>-477/+17.123/+115.123</Location2-2>
+        <Location2-2>-416/+23.300/+120.800</Location2-2>
 
 	<!-- Test 18 --> 
-        <Location2-3>-477/+17.123/+115.123</Location2-3>
+        <Location2-3>-416/+23.300/+120.800</Location2-3>
 
 	<!-- Test 19 --> 
-        <Location2-4>-477/+17.123/+115.123</Location2-4>
+        <Location2-4>-416/+23.300/+120.800</Location2-4>
 
 	<!-- Test 20 --> 
-        <Location2-5>-477/+17.123/+115.123</Location2-5>
+        <Location2-5>-416/+23.300/+120.800</Location2-5>
 
 	<!-- Test 21 --> 
-        <Location2-6>-477/+17.123/+115.123</Location2-6>
+        <Location2-6>-416/+24.300/+120.800</Location2-6>
 
 	<!-- Test 22 --> 
-        <Location2-7>-477/+17.123/+115.123</Location2-7>
+        <Location2-7>-416/+24.300/+120.800</Location2-7>
 
 	<!-- Test 23 --> 
-        <Test2-8>09C4407B4F208A66639E6664EB281524921FFFF003FFFFFFE70</Test2-8>
+        <Test2-8>09C4407B4F20C26663C66664EB281524921FFFF003FFFFFFE70</Test2-8>
         <TestID2-8>A7949C4407B275940A92490</TestID2-8>
-	<EncodedLocation2-8>17.29999/115.79999</EncodedLocation2-8>
+	<EncodedLocation2-8>24.29999/120.79999</EncodedLocation2-8>
   
 	<!-- Test 24 --> 
-        <Location2-9>-477/+17.123/+115.123</Location2-9>
+        <Location2-9>-416/+23.300/+120.800</Location2-9>
 
 	<!-- Test 25 --> 
-        <Location2-10>-477/+17.123/+115.123</Location2-10>
+        <Location2-10>-416/+24.300/+120.800</Location2-10>
 
 	<!-- Test 26 --> 
-        <Location2-11>-477/+17.123/+115.123</Location2-11>
+        <Location2-11>-416/+24.300/+120.800</Location2-11>
 
 	<!-- Test 27 --> 
-        <Location2-12-1>-477/+17.123/+115.123</Location2-12-1>
+        <Location2-12-1>-416/+24.300/+120.800</Location2-12-1>
 
 	<!-- Test 28 --> 
-        <Location2-12-2>-477/+17.134/+115.134</Location2-12-2>
+        <Location2-12-2>-416/+24.310/+120.800</Location2-12-2>
 
 	<!-- Test 29 --> 
-        <Location2-13>-477/+17.123/+115.123</Location2-13>
+        <Location2-13>-416/+24.300/+120.800</Location2-13>
 
 	<!-- Test 30 --> 
-        <Location2-14-1>-477/+17.123/+115.123</Location2-14-1>
+        <Location2-14-1>-416/+24.300/+120.800</Location2-14-1>
 
 	<!-- Test 31 --> 
-        <Location2-14-2>-477/+17.123/+115.123</Location2-14-2>
+        <Location2-14-2>-416/+24.300/+120.800</Location2-14-2>
 
 	<!-- Test 32 --> 
-        <Location2-15>-477/+17.123/+115.123</Location2-15>
+        <Location2-15>-416/+24.300/+120.800</Location2-15>
 	<EncodedLocation2-15>22.0/179.006</EncodedLocation2-15>
 
 	<!-- Test 33 --> 
-        <Location2-16>-477/+17.123/+115.123</Location2-16>
+        <Location2-16>-416/+24.300/+120.800</Location2-16>
 
 	<!-- Test 34 --> 
-        <Location2-17>-477/+17.123/+115.123</Location2-17>
+        <Location2-17>-416/+23.300/+120.800</Location2-17>
 
 	<!-- Test 35 --> 
-        <Location2-18>-477/+17.123/+115.123</Location2-18>
-	<EncodedLocation2-18>-30.0/140.0</EncodedLocation2-18>
+        <Location2-18>-416/+24.300/+120.800</Location2-18>
+	<EncodedLocation2-18>-36.0/16.0</EncodedLocation2-18>
 
 	<!-- Test 36 --> 
-        <Test2-19>09C4C0014F208800039800080000CB89B80FFFF1000060E3A00</Test2-19>
+        <Test2-19>09C4C0014F20C00003C000080000CB89B80FFFF100000C83A00</Test2-19>
         <TestID2-19>A7949C4C0014000065C4DC0</TestID2-19>
 
 	<!-- Test 37 --> 
-        <Location3-1-1>-477/+17.123/+115.123</Location3-1-1>
+        <Location3-1-1>-416/+24.300/+120.800</Location3-1-1>
 
 	<!-- Test 38 --> 
-        <Location3-1-2>-477/+17.123/+115.123</Location3-1-2>
+        <Location3-1-2>-416/+24.300/+120.800</Location3-1-2>
 
 	<!-- Test 39 --> 
-        <Location3-1-3>-477/+17.123/+115.123</Location3-1-3>
+        <Location3-1-3>-416/+24.300/+120.800</Location3-1-3>
 
 	<!-- Test 40 --> 
-        <Location3-2-1>-477/+17.123/+115.123</Location3-2-1>
+        <Location3-2-1>-416/+24.300/+120.800</Location3-2-1>
 
 	<!-- Test 41 --> 
-        <Location3-2-2>-477/+17.123/+115.123</Location3-2-2>
+        <Location3-2-2>-416/+24.300/+120.800</Location3-2-2>
 
 	<!-- Test 42 --> 
-        <Location3-3-1>-477/+17.123/+115.123</Location3-3-1>
+        <Location3-3-1>-416/+24.300/+120.800</Location3-3-1>
 
 	<!-- Test 43 --> 
-        <Location3-3-2>-477/+17.123/+115.123</Location3-3-2>
+        <Location3-3-2>-416/+24.300/+120.800</Location3-3-2>
 
 	<!-- Test 44 --> 
-        <Location3-3-3>-477/+17.123/+115.123</Location3-3-3>
+        <Location3-3-3>-416/+24.300/+120.800</Location3-3-3>
 
 	<!-- Test 45 --> 
-        <Location3-3-4>-477/+17.123/+115.123</Location3-3-4>
+        <Location3-3-4>-416/+24.300/+120.800</Location3-3-4>
 
 	<!-- Test 46 --> 
-        <Location3-4-1>-477/+17.123/+115.123</Location3-4-1>
+        <Location3-4-1>-416/+24.300/+120.800</Location3-4-1>
 
 	<!-- Test 47 --> 
-        <Location3-4-2>-477/+17.123/+115.123</Location3-4-2>
+        <Location3-4-2>-416/+24.300/+120.800</Location3-4-2>
 
 	<!-- Test 48 --> 
-        <Location3-4-3>-477/+17.123/+115.123</Location3-4-3>
+        <Location3-4-3>-416/+24.300/+120.800</Location3-4-3>
 
 	<!-- Test 49 --> 
-        <Location3-4-4>-477/+17.123/+115.123</Location3-4-4>
+        <Location3-4-4>-416/+24.300/+120.800</Location3-4-4>
 
 	<!-- Test 50 --> 
-        <Location3-4-5>-477/+17.123/+115.123</Location3-4-5>
+        <Location3-4-5>-416/+24.300/+120.800</Location3-4-5>
 
 	<!-- Test 51 --> 
-        <Location4-1-1>-477/+17.123/+115.123</Location4-1-1>
+        <Location4-1-1>-416/+24.300/+120.800</Location4-1-1>
 
 	<!-- Test 52 --> 
-        <Location4-1-2>-477/+17.123/+115.123</Location4-1-2>
+        <Location4-1-2>-416/+24.300/+120.800</Location4-1-2>
 
 	<!-- Test 53 --> 
-        <Location5-1>-477/+17.123/+115.123</Location5-1>
+        <Location5-1>-416/+24.300/+120.800</Location5-1>
 
 	<!-- Test 54 --> 
-        <Test7-1-1>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-1>
-        <TestID7-1-1>A7949C5C0015E1B1FFFFFFF</TestID7-1-1>
+        <Test7-1-1>09C500014F03F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-1>
+        <TestID7-1-1>A7949C500015E1B1FFFFFFF</TestID7-1-1>
 
 	<!-- Test 55 --> 
-        <Test7-1-2>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-2>
-        <TestID7-1-2>A7949C5C0015E1B1FFFFFFF</TestID7-1-2>
+        <Test7-1-2>09C500014F20C26663C4000BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-2>
+        <TestID7-1-2>A7949C500015E1B1FFFFFFF</TestID7-1-2>
 
 	<!-- Test 56 --> 
 	<!-- same beacon data as Test 54, 7-1-1 -->
-        <Test7-1-3>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-3>
-        <TestID7-1-3>A7949C5C0015E1B1FFFFFFF</TestID7-1-3>
+        <Test7-1-3>09C500014F03F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-3>
+        <TestID7-1-3>A7949C500015E1B1FFFFFFF</TestID7-1-3>
 
 	<!-- Test 57 --> 
-	<!-- same beacon data as Test 54, 7-1-1 -->
-        <Test7-1-4>09C5C0014F23F83E07FFC1FBC363FFFFFFEFFFF100007FE2600</Test7-1-4>
-        <TestID7-1-4>A7949C5C0015E1B1FFFFFFF</TestID7-1-4>
+        <Test7-1-4>09C500014F01A400006A666BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-4>
+        <TestID7-1-4>A7949C500015E1B1FFFFFFF</TestID7-1-4>
 
  	<!-- Test 58 -->
 	<!-- same beacon data as Test 55, 7-1-2 -->
-        <Test7-1-5>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-5>
-        <TestID7-1-5>A7949C5C0015E1B1FFFFFFF</TestID7-1-5>
+        <Test7-1-5>09C500014F20C26663C4000BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-5>
+        <TestID7-1-5>A7949C500015E1B1FFFFFFF</TestID7-1-5>
 
  	<!-- Test 59 -->
 	<!-- same beacon data as Test 55, 7-1-2 -->
-        <Test7-1-6>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-6>
-        <TestID7-1-6>A7949C5C0015E1B1FFFFFFF</TestID7-1-6>
+        <Test7-1-6>09C500014F20C26663C4000BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-6>
+        <TestID7-1-6>A7949C500015E1B1FFFFFFF</TestID7-1-6>
 
 <!-- 7-1-7 eliminated -->
 
 	<!-- Test 60 --> 
 	<!-- same beacon data as Test 55, 7-1-2 -->
-        <Test7-1-8>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-8>
-        <TestID7-1-8>A7949C5C0015E1B1FFFFFFF</TestID7-1-8>
-        <Location7-1-8>-477/+17.300/+115.500</Location7-1-8>
-	<EncodedLocation7-1-8>17.3/115.5</EncodedLocation7-1-8>
+        <Test7-1-8>09C500014F20C26663C4000BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-8>
+        <TestID7-1-8>A7949C500015E1B1FFFFFFF</TestID7-1-8>
+        <Location7-1-8>-416/+24.300/+120.500</Location7-1-8>
+	<EncodedLocation7-1-8>24.3/120.5</EncodedLocation7-1-8>
       
 	<!-- Test 61 --> 
 	<!-- same beacon data as Test 55, 7-1-2 -->
-        <Test7-1-9>09C5C0014F208A66639C000BC363FFFFFFEFFFF100007FE2600</Test7-1-9>
-        <TestID7-1-9>A7949C5C0015E1B1FFFFFFF</TestID7-1-9>
-        <Location7-1-9>-477/+16.548/+115.761</Location7-1-9>
-	<EncodedLocation7-1-9>17.3/115.5</EncodedLocation7-1-9>
+        <Test7-1-9>09C500014F20C26663C4000BC363FFFFFFEFFFF003FFFFFFE70</Test7-1-9>
+        <TestID7-1-9>A7949C500015E1B1FFFFFFF</TestID7-1-9>
+        <Location7-1-9>-416/+24.548/+120.761</Location7-1-9>
+	<EncodedLocation7-1-9>24.3/120.5</EncodedLocation7-1-9>
 
 	<!-- Test 62 --> 
-        <Test7-2-1>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-1>
-        <TestID7-2-1>ADD49C680014E1B1FFBD620</TestID7-2-1>
-        <Location7-2-1>-477/+17.300/+114.800</Location7-2-1>
-	<EncodedLocation7-2-1>17.5/114.8</EncodedLocation7-2-1>
+        <Test7-2-1>09C680015BA0C40003C66669C363FF7AC40FFFF100007FE2600</Test7-2-1>
+        <TestID7-2-1>ADD49C680014E1B1FFBD620 </TestID7-2-1>
+        <Location7-2-1>-416/+24.300/+120.800</Location7-2-1>
+	<EncodedLocation7-2-1>24.5/120.8</EncodedLocation7-2-1>
 
 	<!-- Test 63 --> 
 	<!-- same beacon data as Test 62, 7-2-1 -->
-        <Test7-2-2>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-2>
+        <Test7-2-2>09C680015BA0C40003C66669C363FF7AC40FFFF100007FE2600</Test7-2-2>
         <TestID7-2-2>ADD49C680014E1B1FFBD620</TestID7-2-2>
-        <Location7-2-2>-477/+17.300/+114.800</Location7-2-2>
-	<EncodedLocation7-2-2>17.5/114.8</EncodedLocation7-2-2>
-
+        <Location7-2-2>-416/+24.300/+120.800</Location7-2-2>
+	<EncodedLocation7-2-2>24.5/120.8</EncodedLocation7-2-2>
   
  	<!-- Test 64 --> 
-	<!-- same beacon data as Test 62, 7-2-1 Note that DOA location is different (fixed in template) -->
-        <Test7-2-3>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-3>
+	<!-- same beacon data as Test 62, 7-2-1 Note that DOA location is different (fixed DOA location in template) -->
+        <Test7-2-3>09C680015BA0C40003C66669C363FF7AC40FFFF100007FE2600</Test7-2-3>
         <TestID7-2-3>ADD49C680014E1B1FFBD620</TestID7-2-3>
-	<EncodedLocation7-2-3>17.5/114.8</EncodedLocation7-2-3>
+	<EncodedLocation7-2-3>24.5/120.8</EncodedLocation7-2-3>
    
  	<!-- Test 65 --> 
 	<!-- same beacon data and location as Test 62, 7-2-1 -->
-        <Test7-2-4>09C680015BA08C0003966669C363FF7AC40FFFF100007FE2600</Test7-2-4>
+        <Test7-2-4>09C680015BA0C40003C66669C363FF7AC40FFFF100007FE2600</Test7-2-4>
         <TestID7-2-4>ADD49C680014E1B1FFBD620</TestID7-2-4>
-        <Location7-2-4>-477/+17.300/+114.800</Location7-2-4>
-	<EncodedLocation7-2-4>17.5/114.8</EncodedLocation7-2-4>
+        <Location7-2-4>-416/+24.300/+120.800</Location7-2-4>
+	<EncodedLocation7-2-4>24.5/120.8</EncodedLocation7-2-4>
 
  	<!-- Test 66 --> 
         <Test7-2-5>09C680015BA3F83E07FFC1F9C363FF7AC40FFFF100007FE2600</Test7-2-5>
         <TestID7-2-5>ADD49C680014E1B1FFBD620</TestID7-2-5>
-        <Location7-2-5>-477/+17.300/+114.800</Location7-2-5>
+        <Location7-2-5>-416/+24.300/+120.800</Location7-2-5>
 
  	<!-- Test 67 --> 
-        <Test9-1>09C440014F308A66639E6667C5953ACA0503FFF00FFFFFFFE70</Test9-1>
-        <TestID9-1>A7949C440013E2CA9D65028</TestID9-1>
-	<EncodedLocation9-1>17.3/115.8</EncodedLocation9-1>
+        <Test9-1>09C580015660C26663C66667CF17BACA0503FFF003FFFFFFE70</Test9-1>
+        <TestID9-1>AB349C580013E78BDD65028 </TestID9-1>
+	<EncodedLocation9-1>24.3/120.8</EncodedLocation9-1>
 
  	<!-- Test 68 --> 
-        <Test9-2>09C5C00156608A66639E6667CF1782AB8603FFF003FFFFFFE70</Test9-2>
+        <Test9-2>09C5C0015660BA6663C66667CF1782AB8603FFF003FFFFFFE70</Test9-2>
         <TestID9-2>AB349C5C0013E78BC155C30</TestID9-2>
-	<EncodedLocation9-2>17.3/115.8</EncodedLocation9-2>
+	<EncodedLocation9-2>24.3/120.8</EncodedLocation9-2>
 
 	<!-- Test 69 --> 
-        <Location10-1>-477/+17.123/+115.123</Location10-1>
+        <Location10-1>-416/+24.300/+120.800</Location10-1>
 
 	<!-- Test 70 --> 
-        <Location10-2>-477/+17.123/+115.123</Location10-2>
+        <Location10-2>-416/+24.300/+120.800</Location10-2>
 
 	<!-- Test 71 -->
         <!-- no parameters -->
 
 	<!-- Test 72 --> 
-        <Location10-4a>-477/+17.123/+115.123</Location10-4a>
-        <Location10-4b>-477/+17.123/+116.123</Location10-4b>
+        <Location10-4a>-416/+24.300/+120.800</Location10-4a>
+        <Location10-4b>-416/+25.246/+120.761</Location10-4b>
 
 	<!-- Test 73 --> 
-        <Location10-5>-477/+17.123/+115.123</Location10-5>
+        <Location10-5>-416/+24.300/+120.800</Location10-5>
 
 	<!-- Test 74 --> 
-        <Location10-6>-477/+17.123/+115.123</Location10-6>
+        <Location10-6>-416/+24.300/+120.800</Location10-6>
 
 	<!-- Test 75 --> 
-        <Location11-1>-477/+17.123/+115.123</Location11-1>
+        <Location11-1>-416/+23.300/+120.800</Location11-1>
 
 	<!-- Test 76 --> 
-        <Location11-2>-477/+17.456/+115.456</Location11-2>
+        <Location11-2>-416/+24.246/+120.761</Location11-2>
 
 <!-- 12-1 not conducted -->
 
 <!-- 12-2 not conducted -->
 
 	<!-- Test 77 -->
-        <Test12-3-1>09C4C00B77643D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-1>
-        <TestID12-3-1>BBB49C4C00B000000000000</TestID12-3-1>
+        <Test12-3-1>09C4C00B68243D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-1>
+        <TestID12-3-1>B4149C4C00B000000000000</TestID12-3-1>
 
 	<!-- Test 78 -->
 	<!-- same beacon data as Test 77, 12-3-1 -->
-        <Test12-3-2>09C4C00B77643D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-2>
-        <TestID12-3-2>BBB49C4C00B000000000000</TestID12-3-2>
+        <Test12-3-2>09C4C00B68243D99A918CCD000000000000BFFF003FFFFFFE70</Test12-3-2>
+        <TestID12-3-2>B4149C4C00B000000000000</TestID12-3-2>
 
 	<!-- Test 79 -->
-        <Test12-4>09C4C00A7763F83E07FFC1FB89B802BFFFE3FFF003FFFFFFE70</Test12-4>
-        <TestID12-4>BBB49C4C00A5C4DC015FFFF</TestID12-4>
+        <Test12-4>09C5000B6823F83E07FFC1FB89B802FFFFE3FFF003FFFFFFE70</Test12-4>
+        <TestID12-4>B4149C5000B5C4DC017FFFF</TestID12-4>
 
-		
+	<!-- Test 80 -->
+        <Test12-5>09C440014F23F83E07FFC1F2970D298A0367FFF003FFFFFFEF0</Test12-5>
+        <TestID12-5>A7949C4400114B8694C501B</TestID12-5>
+	<Location12-5>-416/+24.246/+120.761</Location12-5>
     </TestParameters>
 </Config>

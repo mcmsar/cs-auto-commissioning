@@ -26,6 +26,7 @@
 	<OutputMessageDirectory>C:\insar\lan_out\</OutputMessageDirectory>
 
 
+
     <!-- The list of available satellites for use in any test where the detecting satellite parameter needs to be selected -->
     <!-- in order to be in or out of footprint. GEO satellites are not supported here and should instead be provided in TestParameters. -->
     <!-- By default, Venus will download TLEs and match them to the configured satellite with the same NORAD number, however, -->
@@ -149,7 +150,7 @@
     <!--     <LocalFgb1> -->
     <!--         D6E30F3C0618618C46EAEFE0FF0146 -->
     <!--     </LocalFgb1> -->
-    <!--     <Location1>+38.948/-076.831</Location1> -->
+    <!--     <Location1.1>+38.948/-076.831</Location1.1> -->
     <!-- <TestParameters> -->
 
     <!-- Example input file: -->
@@ -174,189 +175,200 @@
     <!-- /LASSIT -->
     <!-- /ENDMSG -->
     <TestParameters>
-        <LocalMccCode>4120</LocalMccCode>
-        <LocalMccGeolut1Code>4125</LocalMccGeolut1Code>
-        <LocalMccMeolut1Code>4123</LocalMccMeolut1Code>
-        <LocalMccMeolut2Code>4124</LocalMccMeolut2Code>
-	<LocalMccLeolut1Code>4121</LocalMccLeolut1Code>
-		
+        <LocalMccCode>4160</LocalMccCode>
+        <LocalMccMeolut1Code>4166</LocalMccMeolut1Code>
+        <LocalMccMeolut2Code>4167</LocalMccMeolut2Code>
 		
 	<NodalMccDdr1Code>4310</NodalMccDdr1Code>
-        <NodalMccGeolut1Code>4312</NodalMccGeolut1Code>
         <NodalMccMeolut1Code>4314</NodalMccMeolut1Code>
 	<NodalMccLeolut1Code>4311</NodalMccLeolut1Code>
 		
 		
-         <!-- added by JLO, test 9 uses ActualTestTime -->
-         <TestTime>24 263 03</TestTime>
-         <ActualTestTime>24 263 06</ActualTestTime>
+         <!-- test 9 uses ActualTestTime -->
+         <TestTime>25 001 01</TestTime>
+         <ActualTestTime>25 001 02</ActualTestTime>
       	
         <!-- Test 1.1 --> 
-        <!-- constant --> <EltDt1.1>8C99C000001FEFFC8F62C00626EF80</EltDt1.1>
-	<Location1.1>-412/+40.104/+116.209</Location1.1>
+        <!-- constant --> <EltDt1.1>A339F137005FEFFAF41D800452A622</EltDt1.1>
+	<Location1.1>-416/+23.123/+121.567</Location1.1>
 		
 	<!-- Test 2.1 --> 
-        <!-- constant --> <EltDt2.1>8C998000001FEFFD2FB5B00626EC28</EltDt2.1>
-	<Location2.1>-412/+40.104/+116.209</Location2.1>
+        <EltDt2.1>A33971370085E794CE4571DA6ABB70</EltDt2.1>
+	<Location2.1>-416/+23.160/+120.815</Location2.1>
+        <EncodedLocation2.1>23.280/120.821</EncodedLocation2.1>
 		
 	<!-- Test 3.1 --> 
-        <!-- constant --> <EltDt3.1>8C998000005FEFFDA627800E26E47C</EltDt3.1>
-	<Location3.1>-412/+40.104/+116.209</Location3.1>
+        <!-- constant --> <EltDt3.1>A339713700DFEFF8A697000C52ADDE</EltDt3.1>
+	<Location3.1>-416/+24.160/+120.815</Location3.1>
 		
-	<!-- Test 4.1 --> 
-        <!-- constant --> <EltDt4.1>8E097137005FEFFF9AD84F0630948D</EltDt4.1>
-	<Location4.1>-412/+40.104/+116.209</Location4.1>
+	<!-- Test 4.1 NOT REQUIRED --> 
+        <!-- constant --> <EltDt4.1></EltDt4.1>
+	<Location4.1>-563/+07.160/+117.815</Location4.1>
 		
 	<!-- Test 5.1 -->
-	<EltDt5.1>99D98011F548C873AC4A400452A622</EltDt5.1>
+	<EltDt5.1>9A097137006788C278A541C0100781</EltDt5.1>
 	<!-- constant --> <Location5.1A>+503/-18.000/+132.000</Location5.1A>
 	<!-- constant --> <Location5.1B>+563/+01.388/+103.801</Location5.1B>
 		
 	<!-- Test 6.1 --> 
-        <!-- constant --> <EltDt6.1>8C9908D08906633DF4684F0613324C</EltDt6.1>
-	<Location6.1>-412/+40.104/+116.209</Location6.1>
-	<!-- constant --> <EncodedLocation6.1>25.5/51.5</EncodedLocation6.1>
+        <!-- constant --> <EltDt6.1>A33971370042A6AE2E01C0C0000835</EltDt6.1>
+	<Location6.1>-416/+23.160/+120.815</Location6.1>
+	<!--constant--><EncodedLocation6.1>10.5/106.5</EncodedLocation6.1>
 		
 	<!-- Test 7.1 --> <!-- not applicable -->
 		
-	<!-- Test 8-1 -->
-    	<!-- constant --> <EltDt8.1>8ED9BFFFFFDFEFF995A08F05AD6D70</EltDt8.1>
+	<!-- Test 8-1 -->  
+    	<!-- constant --> <EltDt8.1>A3393FFFFFDFEFFB481DC00452A622</EltDt8.1>
 	<!-- constant --> <Location8.1>-366/+38.000/-080.300</Location8.1>
 				   
 	<!-- Test 8-2 --> 
-        <!-- constant --> <EltDt8.2>8F798000001FEFFFA2158F05AD6D70</EltDt8.2>
+        <!-- constant --> <EltDt8.2>A3390000001FEFFBAF21000452A622</EltDt8.2>
 	<!-- constant --> <Location8.2>-366/+38.000/-080.300</Location8.2>
 		
 	<!-- Test 8-3 --> 
-        <!-- constant --> <EltDt8.3>9019BFFFFF9FEFFABB0C0F05AD6D70</EltDt8.3>
+        <!-- constant --> <EltDt8.3>A3393FFFFF9FEFFBC18FC00452A622</EltDt8.3>
 	<!-- constant --> <Location8.3>-366/+38.000/-080.300</Location8.3>
-
- 	<!-- Test 9.1 --> 
-        <EltDt9.1>9DD981520D5FEFF9C8F5000452A622</EltDt9.1>
+		
+	<!-- Test 9.1 --> 
+        <EltDt9.1>93C92AF37BDFEFFFE6CB800452A622</EltDt9.1>
 				
 	<!-- Test 9.2 --> 
-        <EltDt9.2>9DD981520D4A0740050FC00452A622</EltDt9.2>
-        <EncodedLocation9.2>40.0/116.0</EncodedLocation9.2>
-          
-	!-- Test 9.3 --> 
-        <EltDt9.3>9DD981520D4A0740050FC00452A622</EltDt9.3>  <!-- same as test 9.2 -->
-	<Location9.3>-574/+20.160/+106.120</Location9.3> 		
-        <EncodedLocation9.3>40.0/116.0</EncodedLocation9.3> <!-- same as test 9.2 -->
+        <EltDt9.2>93C92AF37BC5C784400F400452A622</EltDt9.2>
+	<EncodedLocation9.2>23.0/120.0</EncodedLocation9.2>
+		  
+	<!-- Test 9.3 --> 
+        <EltDt9.3>93C92AF37BC5C784400F400452A622</EltDt9.3>  <!-- same as test 9.2 -->
+	<Location9.3>-416/+23.160/+120.120</Location9.3>
+	<EncodedLocation9.3>23.0/120.0</EncodedLocation9.3>		
 
         <!-- Test 9.4 --> 
-        <EltDt9.4>9DD981520D4A0740050FC00452A622</EltDt9.4> <!-- same as test 9.2 -->
-	<Location9.4>-412/+40.001/+116.001</Location9.4>
-        <EncodedLocation9.4>40.0/116.0</EncodedLocation9.4> <!-- same as test 9.2 -->
+        <EltDt9.4>93C92AF37BC5C784400F400452A622</EltDt9.4> <!-- same as test 9.2 -->
+	<Location9.4>-416/+23.106/+119.901</Location9.4>
+	<EncodedLocation9.4>23.0/120.0</EncodedLocation9.4>
 
         <!-- Test 9.5 -->           
-        <EltDt9.5>9DD981520D4A0740050FC00452A622</EltDt9.5> <!-- same as test 9.2 -->
-	<Location9.5>-412/+40.001/+116.001</Location9.5>	<!-- same as test 9.4 -->
-        <EncodedLocation9.5>40.0/116.0</EncodedLocation9.5> <!-- same as test 9.2 -->
+        <EltDt9.5>93C92AF37BC5C784400F400452A622</EltDt9.5> <!-- same as test 9.2 -->
+	<Location9.5>-416/+23.106/+119.901</Location9.5>	<!-- same as test 9.4 -->
+	<EncodedLocation9.5>23.0/120.0</EncodedLocation9.5>
 		
       	<!-- Test 9.6 --> 
-        <EltDt9.6>9DD981520D4A0740050FC00452A622</EltDt9.6> <!-- same as test 9.2 -->
-	<Location9.6>-412/+40.001/+116.001</Location9.6>
-        <EncodedLocation9.6>40.0/116.0</EncodedLocation9.6> <!-- same as test 9.2 -->
+        <EltDt9.6>93C92AF37BC5C784400F400452A622</EltDt9.6> <!-- same as test 9.2 -->
+	<Location9.6>-416/+23.176/+121.801</Location9.6>
+	<EncodedLocation9.6>23.0/120.0</EncodedLocation9.6>
 		
-	!-- Test 9.7 --> 
-        <EltDt9.7>9DD981520D4A0740050FC00452A622</EltDt9.7> <!-- same as test 9.2 -->
-	<Location9.7>-416/+22.031/+120.421</Location9.7>
-        <EncodedLocation9.7>40.0/116.0</EncodedLocation9.7> <!-- same as test 9.2 -->
+	<!-- Test 9.7 --> 
+        <EltDt9.7>93C92AF37BC5C784400F400452A622</EltDt9.7> <!-- same as test 9.2 -->
+	<Location9.7>-366/+58.031/-167.421</Location9.7>
+	<EncodedLocation9.7>23.0/120.0</EncodedLocation9.7>
 
         <!-- Test 9.8 --> 
-        <EltDt9.8>9DD981520D5FEFF9C8F5000452A622</EltDt9.8> <!-- same as test 9.1 -->
-	<Location9.8>-416/+22.032/+120.422</Location9.8>		
+        <EltDt9.8>93C92AF37BDFEFFFE6CB800452A622</EltDt9.8> <!-- same as test 9.1 -->
+	<Location9.8>-366/+58.032/-167.422</Location9.8>		
 		
      	<!-- Test 9.9 --> 		            
-        <EltDt9.9>9DD981520D4A075369FE400452A622</EltDt9.9>
-        <EncodedLocation9.9>40.0/117.0</EncodedLocation9.9>
-   		
+        <EltDt9.9>93C92AF37BC5C7972CFEC00452A622</EltDt9.9>
+	<EncodedLocation9.9>23.0/121.0</EncodedLocation9.9>
+     		
 	<!-- Test 10.1 -->       
-        <EltDt10.1>99C900048D0908013558900452ABAD</EltDt10.1>
-	<EncodedLocation10.1>36.0/128.0</EncodedLocation10.1>
-	
+        <EltDt10.1>9A0971370085E7976C0C01D80C0B68</EltDt10.1>
+	<EncodedLocation10.1>23.3/120.8</EncodedLocation10.1>
+		
 	<!-- Test 10.2 --> 	            
         <!-- not applicable -->
 		
 	<!-- Test 11.1 --> 	      	            
-        <!-- constant --> <EltDt11.1>9599BFFFFFDFEFFB74F7CF01E17C9F</EltDt11.1>
-	<Location11.1>-440/+37.000/+126.000</Location11.1>
+        <!-- constant --> <EltDt11.1>A3393FFFFFDFEFFB481DC00452A622</EltDt11.1>
+	<Location11.1>-416/+23.800/+120.800</Location11.1>
 		
 	<!-- Test 11.2 --> 
-        <!-- constant --> <EltDt11.2>95998000001FEFFB93CB0FE1F0FC30</EltDt11.2>
-	<Location11.2>-440/+37.000/+126.000</Location11.2>
+        <EltDt11.2>9A094000001FEFF9ADBF01E1F0F01E</EltDt11.2>
+	<Location11.2>-416/+23.500/+120.500</Location11.2>
 		
 	<!-- Test 12.1  --> 
         <!-- constant --> <EltDt12.1>8E39BD70034D36C8A6C30F05958ECD</EltDt12.1>
-	<Location12.1>-412/+40.000/+116.000</Location12.1>
-	<!-- constant --> <EncodedLocation12.1>52.5/-108.5</EncodedLocation12.1>
+	<Location12.1>-416/+23.243/+120.768</Location12.1>
+	<!--constant--><EncodedLocation12.1>52.5/-108.5</EncodedLocation12.1>
 		
 	<!-- Test 13.1  --> 
-        <!-- constant --> <EltDt13.1>96E92AF03BDFEFFABB7664041D3A83</EltDt13.1>
-	<Location13.1>-412/+40.104/+116.209</Location13.1>
+        <!-- constant --> <EltDt13.1>96E93C048D1FEFFCDB08E4041D3A83</EltDt13.1>
+	<Location13.1>-416/+23.243/+120.768</Location13.1>
 		
 	<!-- Test 13.2  --> 
-        <!-- constant --> <EltDt13.2A>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.2A>
-	<Location13.2A>-412/+40.114/+116.209</Location13.2A>
-	<!-- constant --> <EltDt13.2B>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.2B>
-	<Location13.2B>-412/+40.124/+116.209</Location13.2B>
+        <!-- constant --> <EltDt13.2A>96E93C048D3F5FD60FB00F1E0F01EE</EltDt13.2A>
+	<Location13.2A>-416/+23.253/+120.768</Location13.2A>
+	<!-- constant --> <EltDt13.2B>96E93C048D3F5FD60FB00F1E0F01EE</EltDt13.2B>
+	<Location13.2B>-416/+23.263/+120.768</Location13.2B>
 		
 	<!-- Test 13.3  --> 
-	<!-- constant --> <EltDt13.3>96E92AF03BDFEFFABB7664041D3A83</EltDt13.3>		
-	<Location13.3>-412/+40.114/+116.209</Location13.3> <!-- Same as 13.2.1 -->
+	<!-- constant --> <EltDt13.3>96E93C048D1FEFFCDB08E4041D3A83</EltDt13.3>		
+	<Location13.3>-416/+23.253/+120.768</Location13.3> <!-- Same as 13.2.1 -->
 		
 	<!-- Test 13.4  --> 
-	<!-- constant --> <EltDt13.4>96E92AF03BFF5FD06FCE8F1E0F01EE</EltDt13.4>
-	<Location13.4>-440/+37.160/+126.120</Location13.4>
+	<!-- constant --> <EltDt13.4>96E93C048D3F5FD60FB00F1E0F01EE</EltDt13.4>
+	<Location13.4>-525/-06.802/+106.645</Location13.4>
 		
 	<!-- Test 14.1 --> 
-	<!-- constant --> <EltDt14.1>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.1>
-	<Location14.1>-412/+40.104/+116.209</Location14.1>
+	<!-- constant --> <EltDt14.1>AC692AF007DFEFFB02F24F02706175</EltDt14.1>
+	<Location14.1>-416/+23.143/+120.768</Location14.1>
 		
 	<!-- Test 14.2 --> 
-	<!-- constant --> <EltDt14.2A>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.2A>
-	<Location14.2A>-412/+40.114/+116.209</Location14.2A>
-	<!-- constant --> <EltDt14.2B>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.2B>
-	<Location14.2B>-412/+40.124/+116.209</Location14.2B>
+	<!-- constant --> <EltDt14.2A>AC692AF007FF5FD1D64A8F1E0F01EE</EltDt14.2A>
+	<Location14.2A>-416/+23.153/+120.768</Location14.2A>
+	<!-- constant --> <EltDt14.2B>AC692AF007FF5FD1D64A8F1E0F01EE</EltDt14.2B>
+	<Location14.2B>-416/+23.163/+120.768</Location14.2B>
 		
 	<!-- Test 14.3 --> 
-	<!-- constant --> <EltDt14.3>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.3>
-	<Location14.3>-412/+40.114/+116.209</Location14.3> <!-- same as 14.2.1 -->
+	<!-- constant --> <EltDt14.3>AC692AF007FF5FD1D64A8F1E0F01EE</EltDt14.3>
+	<Location14.3>-416/+23.153/+120.768</Location14.3> <!-- same as 14.2.1 -->
 		
 	<!-- Test 14.4 --> 
-	<!-- constant --> <EltDt14.4>96E92AF007FF5FD76FFA0F1E0F01EE</EltDt14.4>
-	<Location14.4>-412/+40.124/+116.209</Location14.4> <!-- same as 14.2.2 -->
+	<!-- constant --> <EltDt14.4>AC692AF007FF5FD1D64A8F1E0F01EE</EltDt14.4>
+	<Location14.4>-416/+23.163/+120.768</Location14.4> <!-- same as 14.2.2 -->
 		
 	<!-- Test 14.5 --> 
-	<!-- constant --> <EltDt14.5>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.5>
-	<Location14.5>-412/+40.104/+116.209</Location14.5> <!-- same as 14.1 -->
+	<!-- constant --> <EltDt14.5>AC692AF007DFEFFB02F24F02706175</EltDt14.5>
+	<Location14.5>-416/+23.143/+120.768</Location14.5> <!-- same as 14.1 -->
 	
 	<!-- Test 14.6 --> 
-	<!-- constant --> <EltDt14.6>96E92AF007DFEFFDBB42CF0452AC6E</EltDt14.6>
-	<Location14.6>-412/+40.104/+116.209</Location14.6> <!-- same as 14.1 -->
+	<!-- constant --> <EltDt14.6>AC692AF007DFEFFB02F24F02706175</EltDt14.6>
+	<Location14.6>-416/+23.643/+120.768</Location14.6> <!-- same as 14.1 -->
 
 	<!-- Test 14.7 --> <!-- not applicable -->
 		
 	<!-- Test 15.1 --> 
-	<EltDt15.1>9DD90AB50E4A0742325F00F4185351</EltDt15.1>
-	<EncodedLocation15.1>40.167/116.139</EncodedLocation15.1>
+	<EltDt15.1>A3392AF37BC5C7927A6C80FA28EC1E</EltDt15.1>
+	<EncodedLocation15.1>23.218/120.851</EncodedLocation15.1>
 		
 	<!-- Test 15.2 --> 
-	<EltDt15.2>9DD90AB50E4A0742325F00039D876B</EltDt15.2>
-	<EncodedLocation15.2>40.0/116.0</EncodedLocation15.2>
+	<EltDt15.2>A3392AF37BC5C7927A6C800452A622</EltDt15.2>
+	<EncodedLocation15.2>23.0/121.0</EncodedLocation15.2>
 		
 	<!-- Test 16.1 -->
-	<EltDt16.1>9B890AB50D4A07427351C0039D876B</EltDt16.1>
-	<EncodedLocation16.1>40.0/116.0</EncodedLocation16.1>
+	<EltDt16.1>A33971370145E79772BB410452A040</EltDt16.1>
+	<EncodedLocation16.1>23.5/121.0</EncodedLocation16.1>
 
 	<!-- Test 16.2 -->
-	<EltDt16.2>9B890AB50D4A07427351C0F4185351</EltDt16.2>
-	<EncodedLocation16.2>40.167/116.139</EncodedLocation16.2>
+	<EltDt16.2>A33971370145E79772BB415A6B3F27</EltDt16.2>
+	<EncodedLocation16.2>23.280/120.812</EncodedLocation16.2>
 
 	<!-- Test 16.3 -->
 	<!-- constant --> <EltDt16.3>8F798020031FEFF978CECF04578981</EltDt16.3>
-        <Location16.3>-412/+41.104/+114.209</Location16.3>
+        <Location16.3>-416/+23.300/+120.800</Location16.3>
 
+	<!-- Test 17.1 -->
+	<EltDt17.1>8E3971370145C783FA4BA1EEB75CB0</EltDt17.1>
+	<EncodedLocation17.1>23.122/120.122</EncodedLocation17.1>
+
+	<!-- Test 17.2 -->
+	<EltDt17.2>8E3971370145C783FA4BA1EEB75CB0</EltDt17.2>
+	<EncodedLocation17.2>23.122/120.122</EncodedLocation17.2>
+
+	<!-- Test 17.3 -->
+	<EltDt17.3>8E3971370145C783FA4B81EEB75297</EltDt17.3>
+	<EncodedLocation17.3>23.122/120.122</EncodedLocation17.3>
+
+        <!-- Test 18.1 -->
+        <!-- no parameters -->
 
     </TestParameters>
 </Config>
