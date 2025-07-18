@@ -1,0 +1,6 @@
+/00001 00000/#NodalMccDdr1Code#/#MessageTime1.1.1#
+/122/#LocalMccCode#/#LeoSatelliteInView(#EncodedLocation1.1.1#)(#LeoPassTime1.1.1#)#/01
+/#NodalMccLeolut1Code#/+03635.9 999.9 +99.99/#LeoPassTime1.1.1# 00.00/02
+/#LGMbeacon1.1.1#
+/LASSIT
+/ENDMSG

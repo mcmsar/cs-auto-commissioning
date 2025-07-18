@@ -1,0 +1,6 @@
+/***** 00000/#NodalMccDdr1Code#/#TestTime#11
+/122/#LocalMccCode#/012/01
+/4701/+03635.9 999.9 +99.99/#TestTime#10 00.00/02
+/#LGMbeacon10.3.2#
+/LASSIT
+/ENDMSG

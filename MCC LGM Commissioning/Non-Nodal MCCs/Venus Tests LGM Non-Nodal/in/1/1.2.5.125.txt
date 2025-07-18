@@ -1,0 +1,9 @@
+/00007 00000/#NodalMccDdr1Code#/#TestTime#50
+/125/#LocalMccCode#/012/01
+/#NodalMccLeolut1Code#/+4/-02211.0 013.3 +00.00/#LeoTcaTime#40 00.00/4
+/0/03.863/0000/07
+/#LGMbeacon1.2.5#
+/#Location1.2.5A#/043 001.6 002.1/50/00 000 0000/2/255.0 255.0
+/#Location1.2.5B#/292 002.9 004.9/50/00 000 0000/2/255.0 255.0
+/LASSIT
+/ENDMSG

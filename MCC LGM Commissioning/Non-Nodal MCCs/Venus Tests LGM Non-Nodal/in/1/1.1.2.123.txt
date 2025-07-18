@@ -1,0 +1,6 @@
+/00002 00000/#NodalMccDdr1Code#/#MessageTime1.1.2#
+/123/#LocalMccCode#/222/01
+/#NodalMccGeolut1Code#/+03635.9 999.9 +99.99/#LeoPassTime1.1.1# 59.00/02
+/#LGMbeacon1.1.2#
+/LASSIT
+/ENDMSG

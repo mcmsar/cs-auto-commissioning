@@ -1,0 +1,5 @@
+/00142 00000/5030/** *** ****
+Send SIT 217 with MEOSAR satellite >30km from expected location
+
+use one satellite only.
+Add 0.0001 to decimal epoch

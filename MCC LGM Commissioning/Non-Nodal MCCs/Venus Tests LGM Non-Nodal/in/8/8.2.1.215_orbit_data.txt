@@ -1,0 +1,3 @@
+/00136 00000/5030/** *** ****
+Send SIT 215 with invalid data
+delete one satellite field from the SIT 215

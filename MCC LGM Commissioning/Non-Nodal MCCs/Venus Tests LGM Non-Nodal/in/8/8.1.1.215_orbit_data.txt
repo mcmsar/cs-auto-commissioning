@@ -1,0 +1,3 @@
+/00135 00000/5030/** *** ****
+Send SIT 215 to DMCC
+Use current orbit vectors

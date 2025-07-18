@@ -1,0 +1,8 @@
+/00056 00000/#LocalMccMeolut1Code#/#TestTime#05
+/142/#LocalMccCode#/01
+/#LocalMccMeolut1Code#/+11675.6 999.9 +99.99/#TestTime#03 19.26
+/#TestTime#03 25.26/02/#LGMbeacon2.11.2#
+/40.41/00/01/002
+/306 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/LASSIT
+/ENDMSG

@@ -1,0 +1,6 @@
+/00146 00000/5030/** *** ****
+send SIT 215 from a few days ago before applying the manoeuvre.  Add 14 to the first coordinate.  Example +3763.7951 becomes +3777.7951
+
+/010/97074/01
+/24 081 0000 00.000
+/+3763.7951 -2343.6860 +5702.1389/-005.97446 +001.13916 +004.41496

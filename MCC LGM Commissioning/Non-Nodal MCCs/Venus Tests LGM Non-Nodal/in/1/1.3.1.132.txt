@@ -1,0 +1,6 @@
+/00008 00000/#NodalMccDdr1Code#/#TestTime#50
+/132/#LocalMccCode#/#LocalGeoCode#/01
+/#NodalMccGeolut1Code#/-02211.0 013.3 +00.00/#TestTime#10 00.00/02
+/#LGMbeacon1.3.1#
+/LASSIT
+/ENDMSG

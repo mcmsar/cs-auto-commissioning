@@ -1,0 +1,9 @@
+/99005 00000/#LocalMccMeolut1Code#/#TestTime#20
+/142/#LocalMccCode#/01
+/#LocalMccMeolut1Code#/+11675.6 999.9 +99.99/#TestTime#19 19.26
+/#TestTime#19 25.26/02/#LGMbeacon10.5.3#
+/40.41/00/01/002
+/#MeoSatelliteInView(#EncodedLocation10.5.1#)(#TestTime#19)(1)# #MeoSatelliteInView(#EncodedLocation10.5.1#)(#TestTime#19)(2)# #MeoSatelliteInView(#EncodedLocation10.5.1#)(#TestTime#19)(3)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/LASSIT
+/ENDMSG
+

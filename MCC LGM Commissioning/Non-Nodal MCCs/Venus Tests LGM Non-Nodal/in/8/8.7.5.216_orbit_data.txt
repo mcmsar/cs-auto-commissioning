@@ -1,0 +1,12 @@
+/00150 00000/4310/** *** ****
+Send SIT 216 with data for S10 with position > 5 km but less than 12 km from expected location
+
+ Add 7 to the first coordinate.  Example +3763.7951 becomes +3770.7951
+
+/12987 00000/3660/24 080 1212
+/216/5030/01
+/010/97074/01
+/24 081 0000 00.000
+/+3763.7951 -2343.6860 +5702.1389/-005.97446 +001.13916 +004.41496
+/LASSIT
+/ENDMSG

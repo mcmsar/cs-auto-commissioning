@@ -1,0 +1,8 @@
+/00124 00000/#NodalMccDdr1Code#/#TestTime#17
+/138/#LocalMccCode#/01
+/#NodalMccMeolut1Code#/+99999.9 999.9 +99.99/#TestTime#06 16.72
+/#TestTime#16 13.18/07/#LGMbeacon6.7.3#
+/38.20/00/01/007
+/#MeoSatelliteInView(#EncodedLocation6.7.3#)(#TestTime#16)(1)# #MeoSatelliteInView(#EncodedLocation6.7.3#)(#TestTime#16)(2)# 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000
+/LASSIT
+/ENDMSG
